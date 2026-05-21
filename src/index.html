@@ -28,57 +28,6 @@
 
         <main class="container my-5">
 			<h1><span id ="text"></span><span class="caret"></span></h1>
-			<script>
-				const el = document.getElementById("text");
-				const text = "hello, world";
-				let 
-					i = 0, 
-					erase = false, 
-					pause = false;
-
-				function type_rate()
-				{
-					// Case 1 : Pause
-					if (pause)
-					{
-						return;
-					}
-
-					// Case 2 : Erase
-					if (erase)
-					{
-						el.textContent = text.slice(0, --i);
-						if (i === 0)
-						{
-							pause = true;
-							setTimeout(start_pause_time, 2000)
-						}
-					}
-					// Case 3 : Type
-					else
-					{
-						el.textContent = text.slice(0, ++i);
-						if (i === text.length)
-						{
-							pause = true;
-							setTimeout(end_pause_time,2000);
-						}
-					}
-				}
-				setInterval(type_rate,150);
-
-				function start_pause_time()
-				{
-					erase = false;
-					pause = false;
-				}
-
-				function end_pause_time()
-				{
-					erase = true;
-					pause = false;
-				}
-			</script>
 
             <p>Tristan here, welcome to my website.</p>
 
