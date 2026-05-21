@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function()
     }
 	if (document.getElementById("text"))
 	{
-		animation("text", "hello, world");
+		animate_text("hello, world");
 	}
 });
 
@@ -59,9 +59,9 @@ function submitForm()
     document.getElementById('message').value = '';
 }
 
-function animation(elementId, text)
+function animate_text(text)
 {
-	const el = document.getElementById(elementId);
+	const el = document.getElementById("text");
 	let 
 		i = 0, 
 		erase = false, 
