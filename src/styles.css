@@ -3,7 +3,8 @@
    THEME VARIABLES
    Edit colors, fonts, and sizes here — changes apply globally
    ============================================================ */
-:root {
+:root
+{
     --bg:        #F5F5F5;
     --surface:   #FFFFFF;
     --text:      #000000;
@@ -16,7 +17,8 @@
 }
 
 /* Dark mode overrides — only redefine what changes */
-body.dark-mode {
+body.dark-mode
+{
     --bg:        #000000;
     --surface:   #2A2A2A;
     --text:      #FFFFFF;
@@ -28,7 +30,8 @@ body.dark-mode {
 /* ============================================================
    BASE
    ============================================================ */
-body {
+body
+{
     font-family: var(--font-body);
     background-color: var(--bg);
     color: var(--text);
@@ -40,19 +43,33 @@ body {
 /* ============================================================
    TYPOGRAPHY
    ============================================================ */
-h1 { color: var(--text); font-size: var(--font-h1); }
-h2 { color: var(--text-muted); font-size: var(--font-h2); }
+h1
+{ 
+	color: var(--text); font-size: var(--font-h1);
+}
+h2
+{
+	color: var(--text-muted); font-size: var(--font-h2);
+}
 
-label { font-weight: bold; margin-top: 10px; }
+label
+{
+	font-weight: bold; margin-top: 10px;
+}
 
-blockquote {
+blockquote
+{
     border-left: 3px solid var(--quote-border);
     padding-left: 15px;
     font-style: italic;
 }
 
-@media (max-width: 768px) {
-    h1 { font-size: 1.5rem; }
+@media (max-width: 768px)
+{
+    h1
+	{
+		font-size: 1.5rem;
+	}
 }
 
 
@@ -60,15 +77,20 @@ blockquote {
    NAVBAR
    ============================================================ */
 .navbar-brand,
-.nav-link {
+.nav-link
+{
     color: var(--text) !important;
     position: relative;
     display: inline-block;
 }
 
-.nav-link:hover { transform: translateY(-3px); }
+.nav-link:hover
+{
+	transform: translateY(-3px);
+}
 
-.navbar .btn {
+.btn
+{
     --bs-btn-color: var(--text);
     --bs-btn-border-color: var(--text);
 }
@@ -76,7 +98,8 @@ blockquote {
 /* ============================================================
    COMPONENTS
    ============================================================ */
-.interest-box {
+.interest-box
+{
     background-color: var(--surface);
     padding: 15px;
     margin: 15px 0;
@@ -84,7 +107,8 @@ blockquote {
 }
 
 /* Blinking caret */
-.caret {
+.caret
+{
     display: inline-block;
     width: 2px;
     height: 1em;
@@ -94,7 +118,8 @@ blockquote {
     animation: blink 1s infinite;
 }
 
-@keyframes blink {
+@keyframes blink
+{
     0%,  49% { opacity: 1; }
     50%, 100% { opacity: 0; }
 }
