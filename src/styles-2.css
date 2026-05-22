@@ -6,7 +6,6 @@
     background-image: url('images/sky1.jpg');
     background-size: cover;
     background-position: center;
-    /* fixed can cause bugs on iOS Safari — switch to scroll */
     background-attachment: scroll;
 }
 
@@ -19,11 +18,13 @@
     gap: 15px;
     margin: 12px auto 0;
     border-bottom: #00303b 3px dotted;
-    width: 250px;
-    max-width: 100%;
+    /* stretch across full width so header falls below */
+    width: 100%;
     height: 60px;
     user-select: none;
     white-space: nowrap;
+    box-sizing: border-box;
+    padding: 0 12px;
 }
 
 .icons a {
@@ -33,7 +34,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* prevent tap highlight on mobile */
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -42,7 +42,6 @@
     height: 40px;
     mix-blend-mode: multiply;
     filter: brightness(1.5);
-    /* prevent long-press save dialog on mobile */
     -webkit-user-drag: none;
     pointer-events: none;
 }
@@ -51,20 +50,18 @@
    Header
    ============================================================ */
 header {
-    margin: 0 auto;
-    width: 320px;
-    max-width: 100%;
-    /* add some breathing room on small screens */
+    /* force onto its own line below the nav */
+    display: block;
+    width: 100%;
+    margin: 16px auto 0;
     padding: 0 12px;
     box-sizing: border-box;
+    text-align: center;
 }
 
 header h1 {
     margin: 0;
     font-style: italic;
-    font-size: 69px;
-    text-align: center;
-    color: #000000;
-    /* scale down on narrow screens */
     font-size: clamp(36px, 15vw, 69px);
+    color: #000000;
 }
