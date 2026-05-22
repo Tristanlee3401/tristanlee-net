@@ -93,6 +93,9 @@ blockquote
 {
     --bs-btn-color: var(--text);
     --bs-btn-border-color: var(--text);
+	--bs-btn-hover-color: var(--bg);
+    --bs-btn-hover-bg: var(--text);
+    --bs-btn-hover-border-color: var(--text);
 }
 
 /* ============================================================
