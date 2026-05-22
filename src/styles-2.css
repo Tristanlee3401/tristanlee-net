@@ -28,7 +28,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    filter: brightness(1.5) contrast(1.0);
     /* -webkit-tap-highlight-color: transparent; */
 }
 
