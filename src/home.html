@@ -26,6 +26,17 @@
 			李会政
 		</h1>
 	</header>
+
+    <button onclick="document.getElementById('window').style.display='block'">open window</button>
+    <div id="window" class="overlay">
+        <div class="window">
+            <div class="windowheader">
+                <p>select character story</p>
+                <button onclick="document.getElementById('window').style.display='none'">X</button>
+            </div>
+            <iframe src="/characterselection.html" title="characterselect"></iframe>
+        </div>
+    </div>
 </body>
 </html>
 
