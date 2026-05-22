@@ -5,160 +5,128 @@
    ============================================================ */
 :root
 {
-    --bg:        #F5F5F5;
-    --surface:   #FFFFFF;
-    --text:      #000000;
-    --text-muted:#666666;
+    --bg:           #F5F5F5;
+    --surface:      #FFFFFF;
+    --text:         #000000;
+    --text-muted:   #666666;
     --quote-border: #999999;
-
-    --font-body: 'Courier New';
-    --font-h1:   2rem;
-    --font-h2:   1.3rem;
+    --font-body:    'Courier New';
+    --font-h1:      2rem;
+    --font-h2:      1.3rem;
 }
-
 /* Dark mode overrides — only redefine what changes */
 body.dark-mode
 {
-    --bg:        #000000;
-    --surface:   #2A2A2A;
-    --text:      #FFFFFF;
-    --text-muted:#E0E0E0;
+    --bg:           #000000;
+    --surface:      #2A2A2A;
+    --text:         #FFFFFF;
+    --text-muted:   #E0E0E0;
     --quote-border: #666666;
 }
-
-
 /* ============================================================
    BASE
    ============================================================ */
 body
 {
-    font-family: var(--font-body);
+    font-family:      var(--font-body);
     background-color: var(--bg);
-    color: var(--text);
-    margin: 0;
-    padding: 0;
+    color:            var(--text);
 }
-
 hr
 {
-	color: var(--text);
-	opacity: 1;
+    color:   var(--text);
+    opacity: 1;
 }
-
 /* ============================================================
    TYPOGRAPHY
    ============================================================ */
 h1
-{ 
-	color: var(--text);
-	font-size: var(--font-h1);
+{
+    font-size: var(--font-h1);
 }
 h2
 {
-	color: var(--text-muted); 
-	font-size: var(--font-h2);
+    color:     var(--text-muted);
+    font-size: var(--font-h2);
 }
-
 label
 {
-	font-weight: bold; 
-	margin-top: 10px;
+    font-weight: bold;
+    margin-top:  10px;
 }
-
 blockquote
 {
-    border-left: 3px solid var(--quote-border);
+    border-left:  3px solid var(--quote-border);
     padding-left: 15px;
-    font-style: italic;
+    font-style:   italic;
 }
-
 @media (max-width: 768px)
 {
-    h1
-	{
-		font-size: 1.5rem;
-	}
+    h1 { font-size: 1.5rem; }
 }
-
-
 /* ============================================================
    NAVBAR
    ============================================================ */
 .navbar-brand,
 .nav-link
 {
-    color: var(--text) !important;
+    color:    var(--text) !important;
     position: relative;
-    display: inline-block;
 }
-
 .nav-link:hover
 {
-	transform: translateY(-3px);
+    transform: translateY(-3px);
 }
-
 .btn
 {
-    --bs-btn-color: var(--text);
-    --bs-btn-border-color: var(--text);
-	--bs-btn-hover-color: var(--bg);
-    --bs-btn-hover-bg: var(--text);
+    --bs-btn-color:         var(--text);
+    --bs-btn-border-color:  var(--text);
+    --bs-btn-hover-color:   var(--bg);
+    --bs-btn-hover-bg:      var(--text);
     --bs-btn-hover-border-color: var(--text);
+    --bs-btn-border-radius: 0;
 }
-
 /* ============================================================
    COMPONENTS
    ============================================================ */
 .interest-box
 {
     background-color: var(--surface);
-    padding: 15px;
-    margin: 15px 0;
-    border-left: 3px solid var(--text);
+    padding:          15px;
+    margin:           15px 0;
+    border-left:      3px solid var(--text);
 }
-
 /* Blinking caret */
 .caret
 {
-    display: inline-block;
-    width: 2px;
-    height: 1em;
+    display:          inline-block;
+    width:            2px;
+    height:           1em;
     background-color: var(--text);
-    margin-left: 2px;
-    vertical-align: text-top;
-    animation: blink 1s infinite;
+    margin-left:      2px;
+    vertical-align:   text-top;
+    animation:        blink 1s infinite;
 }
 
+.form-control,
+.list-group-item:first-child
+{
+    border-radius: 0;
+}
 @keyframes blink
 {
     0%,  49% { opacity: 1; }
     50%, 100% { opacity: 0; }
 }
-
 .alert-info
 {
-	--bs-alert-color: var(--text);
-	--bs-alert-bg: var(--bg);
-	--bs-alert-border-color: var(--text);
+    --bs-alert-color:         var(--text);
+    --bs-alert-bg:            var(--bg);
+    --bs-alert-border-color:  var(--text);
+    --bs-alert-border-radius: 0;
 }
-
-/* ============================================================
-   HOME
-   ============================================================ */
-
-.home 
-{
-	margin: 0;
-	min-height: 100vh;
-	background-image: url('/images/sky1.jpg');
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-}
-
 .home-thumb-full
 {
-	max-width: 100%;
-	height: auto;
+    max-width: 100%;
+    height:    auto;
 }
