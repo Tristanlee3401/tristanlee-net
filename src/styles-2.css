@@ -49,20 +49,16 @@ header
 {
     text-align: center;
     padding: 12px;
+	box-sizing: border-box;
+	width: 100%;
 }
 
-header h1
+header h1, .error
 {
     margin-top: 10px;
     font-size: clamp(36px, 10vw, 100px);
     color: #000000;
-}
-
-.error
-{
-    margin-top: 50px;
-    font-size: clamp(36px, 10vw, 70px);
-    color: #000000;
+	word-wrap: break-word;
 }
 
 /* ============================================================
@@ -81,16 +77,24 @@ header h1
 .window 
 {
 	position: absolute;
-	top: 50%; left: 50%;
+	top: 50%; 
+	left: 50%;
 	transform: translate(-50%, -50%);
+
+	background: #c5c5c5;
 	border-top: 3px solid #fefefe;
 	border-right: 3px solid #4d4d4d;
 	border-bottom: 3px solid #3f3f3f;
 	border-left: 3px solid #e5e5e5;
-	background: #c5c5c5;
-	width: 420px;
-	max-width: 95vw;
+
 	height: 320px;
+	font-family: monospace;
+	font-size: 12px;
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+	box-sizing: border-box;
+
 	font-family: monospace;
 	font-size: 12px;
 }
@@ -141,7 +145,6 @@ header h1
 	display: flex;
 	align-items: center;
 	gap: 8px;
-	padding: 10px;
 	width: 100%;
 	box-sizing: border-box;
 }
@@ -154,8 +157,10 @@ header h1
 
 .windowsearchbar
 {
+	position: relative;
+	margin: auto;
 	flex: 1;
-    border: 2px solid #fefefe;
+    border: 2px solid #FEFEFE;
     background: #FFFFFF;
     height: 25px;
     font-family: monospace;
@@ -165,12 +170,4 @@ header h1
     align-items: center;
     box-sizing: border-box;
     overflow: hidden;
-}
-
-.window 
-{
-    width: 90%;
-    max-width: 500px;
-    margin: 0 auto;
-	box-sizing: border-box;
 }
