@@ -1,4 +1,3 @@
-
 /* ============================================================
    Home Background
    ============================================================ */
@@ -16,7 +15,7 @@
     justify-content: center;
     gap: 15px;
     padding-bottom: 8px;
-    border-bottom: #00303b 3px dotted;
+    border-bottom: #00303B 3px dotted;
     user-select: none;
 }
 
@@ -74,11 +73,11 @@ header h1, .error
 
 .window 
 {
-	background: #c5c5c5;
-	border-top: 3px solid #fefefe;
-	border-right: 3px solid #4d4d4d;
-	border-bottom: 3px solid #3f3f3f;
-	border-left: 3px solid #e5e5e5;
+	background: #C5C5C5;
+	border-top: 3px solid #FEFEFE;
+	border-right: 3px solid #4D4D4D;
+	border-bottom: 3px solid #3F3F3F;
+	border-left: 3px solid #E5E5E5;
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
@@ -122,21 +121,21 @@ header h1, .error
 {
 	width: 18px; height: 18px;
 	font-size: 8px;
-	border-top: 2px solid #fefefe;
-	border-right: 2px solid #4d4d4d;
-	border-bottom: 2px solid #3f3f3f;
-	border-left: 2px solid #e5e5e5;
-	background-color: #ff0000;
+	border-top: 2px solid #FEFEFE;
+	border-right: 2px solid #4D4D4D;
+	border-bottom: 2px solid #3F3F3F;
+	border-left: 2px solid #E5E5E5;
+	background-color: #FF0000;
 	padding: 0;
 	cursor: default;
 }
 
 .windowheader button:active
 {
-	border-top: 2px solid #3f3f3f;
-	border-right: 2px solid #fefefe;
-	border-bottom: 2px solid #fefefe;
-	border-left: 2px solid #4d4d4d;
+	border-top: 2px solid #3F3F3F;
+	border-right: 2px solid #FEFEFE;
+	border-bottom: 2px solid #FEFEFE;
+	border-left: 2px solid #4D4D4D;
 }
 
 .windowsearchbar
