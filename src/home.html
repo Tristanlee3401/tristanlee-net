@@ -1,90 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="initial-scale=1.0, width=device-width">
-	<link href="/styles-2.css" rel="stylesheet">
-	<title>Home</title>
-</head>
-<body class="home">
-    <div class="navicons">
-        <div class="icons">
-            <a href="/about/">
-                <img src="/images/tux.png">
-				about
-            </a>
-        </div>
-
-		<div class="icons">
-			<a onclick="document.getElementById('window').style.display='block'">
-                <img src="/images/file.png">
-				名
-			</a>
-		</div>
-
-		<div class="icons">
-			<a href="/">
-				<img src="/images/exit.png">
-				exit
-			</a>
-        </div>
-	</div>
-
-    <div id="window" class="overlay">
-        <div class="window">
-            <div class="windowheader">
-                <p>Untitled - Notepad++</p>
-                <button onclick="document.getElementById('window').style.display='none'">X</button>
-            </div>
-			<div class="window-content">
-				<header>
-					<h1 class="chinese-name">
-						李会政
-					</h1>
-				</header>
-			</div>
-        </div>
+---
+layout: home-layout.liquid
+title: Home
+---
+<div class="navicons">
+    <div class="icons">
+        <a href="{{ '/about/' | url }}">
+            <img src="{{ '/images/tux.png' | url }}">
+            about
+        </a>
     </div>
 
-	<div class="window">
-		<div class="windowheader">
-			<p>browser</p>
-		</div>
-		<header>
-			<div class="browser-address-row">
-				<span class="browser-label">URL:</span>
-				<div class="windowsearchbar">
-					http://localhost/
-				</div>
-			</div>
-			<h1 class="error">
-				404
-			</h1>
-		</header>
-	</div>
+    <div class="icons">
+        <a onclick="document.getElementById('window').style.display='block'">
+            <img src="{{ '/images/file.png' | url }}">
+            名
+        </a>
+    </div>
 
-	<div class="window">
-		<div class="windowheader">
-			<p>browser</p>
-			<button onclick="document.getElementById('window').style.display='none'">X</button>
-		</div>
-		<div class="browser-address-row">
-			<span class="browser-label">URL:</span>
-			<div class="windowsearchbar">
-				http://localhost/
-			</div>
-		</div>
-		<div class="window-content">
-			<header>
-				<h1 class="error">
-					404
-				</h1>
-				<h2>
-					File not found
-				</h2>
-			</header>
-		</div>
-	</div>
-</body>
-</html>
+    <div class="icons">
+        <a href="{{ '/' | url }}">
+            <img src="{{ '/images/exit.png' | url }}">
+            exit
+        </a>
+    </div>
+</div>
 
+<div id="window" class="overlay">
+    <div class="window">
+        <div class="windowheader">
+            <p>Untitled - Notepad++</p>
+            <button onclick="document.getElementById('window').style.display='none'">X</button>
+        </div>
+        <div class="window-content">
+            <header>
+                <h1 class="chinese-name">李会政</h1>
+            </header>
+        </div>
+    </div>
+</div>
+
+<!-- Window 1: 404 -->
+<div class="window">
+    <div class="windowheader">
+        <p>browser</p>
+    </div>
+    <header>
+        <div class="browser-address-row">
+            <span class="browser-label">URL:</span>
+            <div class="windowsearchbar">http://localhost/</div>
+        </div>
+        <h1 class="error">404</h1>
+    </header>
+</div>
+
+<!-- Window 2: 404 with close -->
+<div class="window">
+    <div class="windowheader">
+        <p>browser</p>
+        <button onclick="document.getElementById('window').style.display='none'">X</button>
+    </div>
+    <div class="browser-address-row">
+        <span class="browser-label">URL:</span>
+        <div class="windowsearchbar">http://localhost/</div>
+    </div>
+    <div class="window-content">
+        <header>
+            <h1 class="error">404</h1>
+            <h2>File not found</h2>
+        </header>
+    </div>
+</div>
