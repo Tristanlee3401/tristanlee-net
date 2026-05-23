@@ -2,11 +2,16 @@
    Home Background
    ============================================================ */
 .home {
-    min-height: 100vh;
-    background-image: url('images/sky.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
+    background-image: url('/images/sky.jpg');
+    background-size: 200%;
+    background-repeat: no-repeat;
+	background-attachment: scroll;
+    animation: pan 60s linear infinite alternate;
+}
+
+@keyframes pan {
+    from { background-position: 0% 50%; }
+    to   { background-position: 100% 50%; }
 }
 
 /* ============================================================
