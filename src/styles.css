@@ -131,3 +131,16 @@ blockquote
     max-width: 100%;
     height:    auto;
 }
+
+a[href="/home/"] img,
+.avatar
+{
+	border: 2px solid transparent;
+	transition: border-color 0.2s ease;
+}
+
+a[href="/home/"] img:hover,
+.avatar:hover
+{
+	border-color: var(--text);
+}
