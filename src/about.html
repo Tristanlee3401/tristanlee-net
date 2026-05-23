@@ -3,29 +3,27 @@ layout: tailwind.liquid
 title: About
 permalink: "/about/"
 ---
-<h1>about me</h1>
-<hr>
+<h1 class="text-3xl font-bold mb-4">about me</h1>
+<hr class="border-black dark:border-white mb-6">
 
-<div class="d-flex align-items-start">
-    <img class="avatar me-4"
-         src="{{ '/assets/images/profile.png' | url }}"
-         height="150"
-         width="150"
-         align="left"
+<div class="flex flex-col sm:flex-row gap-6 items-start">
+    <img src="{{ '/assets/images/profile.png' | url }}"
+		 alt="Profile Picture"
+		 class="w-36 h-36 object-cover border border-black dark:border-white shrink-0"
     >
 
     <div>
-        <p>I'm a lifelong learner.</p>
-        <h2>education</h2>
-        <ul>
+        <p class="mb-4">I'm a lifelong learner.</p>
+        <h2 class="text-xl font-bold mb-2">education</h2>
+        <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
             <li>computer science, electrical engineering, and accounting trifecta</li>
             <li>learning bash, clang, css, html, java, javascript, linux, python</li>
         </ul>
     </div>
 </div>
 
-<div class="alert alert-info mt-4">
+<div class="mt-8 p-4 border border-black dark:border-white bg-gray-50 dark:bg-black">
     thanks for visiting my page!
 </div>
 
-<a href="{{ '/' | url }}" class="btn btn-sm btn-outline-secondary mt-3">back</a>
+<a href="{{ '/' | url }}" class="inline-block mt-6 border border-black dark:border-white px-4 py-1 text-sm hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition">back</a>

@@ -56,14 +56,14 @@
     </head>
     <body class="font-mono bg-[#F5F5F5] dark:bg-black text-black dark:text-white transition-colors duration-200">
         <nav class="border-b border-black dark:border-white">
-            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-                <a class="text-xl font-bold tracking-tight" href="/">
+            <div class="container mx-auto px-6 py-4 flex flex-wrap justify-between items-center">
+                <a class="text-xl font-bold tracking-tight" href="/personal/">
                     home
                 </a>
-			<ul class="flex space-x-6">
-				<li><a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/about/">about</a></li>
-				<li><a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/interests/">interests</a></li>
-				<li><a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/contact/">contact</a></li>
+			<ul class="flex flex-wrap gap-4 sm:gap-6">
+				<li><a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/personal/about/">about</a></li>
+				<li><a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/personal/interests/">interests</a></li>
+				<li><a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/personal/contact/">contact</a></li>
 			</ul>
                 <button class="border border-black dark:border-white px-3 py-1 text-sm hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition" onclick="toggleTheme()">
                     toggle theme
@@ -72,32 +72,30 @@
         </nav>
 
         <main class="container mx-auto px-6 py-10">
-            <h1>about me</h1>
-<hr>
+            <h1 class="text-3xl font-bold mb-4">about me</h1>
+<hr class="border-black dark:border-white mb-6">
 
-<div class="d-flex align-items-start">
-    <img class="avatar me-4"
-         src="/assets/images/profile.png"
-         height="150"
-         width="150"
-         align="left"
+<div class="flex flex-col sm:flex-row gap-6 items-start">
+    <img src="/personal/assets/images/profile.png"
+		 alt="Profile Picture"
+		 class="w-36 h-36 object-cover border border-black dark:border-white shrink-0"
     >
 
     <div>
-        <p>I'm a lifelong learner.</p>
-        <h2>education</h2>
-        <ul>
+        <p class="mb-4">I'm a lifelong learner.</p>
+        <h2 class="text-xl font-bold mb-2">education</h2>
+        <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
             <li>computer science, electrical engineering, and accounting trifecta</li>
             <li>learning bash, clang, css, html, java, javascript, linux, python</li>
         </ul>
     </div>
 </div>
 
-<div class="alert alert-info mt-4">
+<div class="mt-8 p-4 border border-black dark:border-white bg-gray-50 dark:bg-black">
     thanks for visiting my page!
 </div>
 
-<a href="/" class="btn btn-sm btn-outline-secondary mt-3">back</a>
+<a href="/personal/" class="inline-block mt-6 border border-black dark:border-white px-4 py-1 text-sm hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition">back</a>
 
         </main>
 
@@ -105,6 +103,6 @@
             <p>Copyright &copy; 2026 Tristan Lee</p>
         </footer>
 
-        <script src="/assets/js/script.js"></script>
+        <script src="/personal/assets/js/script.js"></script>
     </body>
 </html>
