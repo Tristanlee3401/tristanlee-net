@@ -1,7 +1,9 @@
+
 /* ============================================================
    Home Background
    ============================================================ */
-.home {
+.home
+{
     background-image: url('/images/sky.jpg');
 }
 
@@ -159,6 +161,7 @@ header h1, .error
 	display: flex;
 	align-items: center;
 	gap: 8px;
+	padding: 8px;
 	width: 100%;
 	box-sizing: border-box;
 }
