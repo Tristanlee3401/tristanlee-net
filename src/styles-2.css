@@ -3,15 +3,6 @@
    ============================================================ */
 .home {
     background-image: url('/images/sky.jpg');
-    background-size: 200%;
-    background-repeat: no-repeat;
-	background-attachment: scroll;
-    animation: pan 60s linear infinite alternate;
-}
-
-@keyframes pan {
-    from { background-position: 0% 50%; }
-    to   { background-position: 100% 50%; }
 }
 
 /* ============================================================
