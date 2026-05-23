@@ -47,17 +47,18 @@
    ============================================================ */
 header
 {
-    text-align: center;
-    padding: 12px;
 	box-sizing: border-box;
+    padding: 12px;
+    text-align: center;
 	width: 100%;
 }
 
 header h1, .error
 {
-    margin-top: 10px;
-    font-size: clamp(36px, 10vw, 100px);
     color: #000000;
+	font-family: monospace;
+    font-size: clamp(36px, 10vw, 100px);
+    margin-top: 10px;
 	word-wrap: break-word;
 }
 
@@ -66,37 +67,31 @@ header h1, .error
    ============================================================ */
 .overlay 
 {
+	background: #57575769;
 	display: none;
 	position: fixed;
 	top: 0; left: 0;
 	width: 100%; height: 100%;
-	background: #57575769;
 	z-index: 99;
 }
 
 .window 
 {
-	position: absolute;
-	top: 50%; 
-	left: 50%;
-	transform: translate(-50%, -50%);
-
 	background: #c5c5c5;
 	border-top: 3px solid #fefefe;
 	border-right: 3px solid #4d4d4d;
 	border-bottom: 3px solid #3f3f3f;
 	border-left: 3px solid #e5e5e5;
-
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
 	height: 320px;
-	font-family: monospace;
-	font-size: 12px;
     width: 90%;
     max-width: 500px;
-    margin: 0 auto;
-	box-sizing: border-box;
-
-	font-family: monospace;
-	font-size: 12px;
+	position: absolute;
+	top: 50%; 
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .windowheader
@@ -105,8 +100,15 @@ header h1, .error
 	height: 24px;
 	display: flex;
 	align-items: center;
-	padding: 0 4px;
-	user-select: none;
+	padding: 2px 5px;
+	flex-shrink: 0;
+}
+
+.window-content {
+    flex: 1; 
+	font-family: monospace;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .windowheader p
@@ -140,21 +142,6 @@ header h1, .error
 	border-left: 2px solid #4d4d4d;
 }
 
-.browser-address-row
-{
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	width: 100%;
-	box-sizing: border-box;
-}
-
-.browser-label
-{
-	font-family: monospace;
-	font-size: 12px;
-}
-
 .windowsearchbar
 {
 	position: relative;
@@ -171,3 +158,19 @@ header h1, .error
     box-sizing: border-box;
     overflow: hidden;
 }
+
+.browser-address-row
+{
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.browser-label
+{
+	font-family: monospace;
+	font-size: 12px;
+}
+
