@@ -12,7 +12,8 @@
 /* ============================================================
    Navigation
    ============================================================ */
-.navicons {
+.navicons
+{
     display: flex;
     justify-content: center;
     gap: 15px;
@@ -21,17 +22,19 @@
     user-select: none;
 }
 
-.icons a {
+.icons a
+{
     text-decoration: none;
     color: #000000;
-    font-family: monospace;
+    font-family: sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* -webkit-tap-highlight-color: transparent; */
+	text-align: center;
 }
 
-.icons img {
+.icons img
+{
     width: 40px;
     height: 40px;
     mix-blend-mode: multiply;
@@ -40,24 +43,33 @@
 }
 
 /* ============================================================
-   Header
+   Window text
    ============================================================ */
-header {
+header
+{
     text-align: center;
     padding: 12px;
 }
 
-header h1 {
+header h1
+{
+    margin-top: 10px;
+    font-size: clamp(36px, 10vw, 100px);
+    color: #000000;
+}
+
+.error
+{
     margin-top: 50px;
-    font-style: italic;
-    font-size: clamp(36px, 10vw, 69px);
+    font-size: clamp(36px, 10vw, 70px);
     color: #000000;
 }
 
 /* ============================================================
    Window
    ============================================================ */
-.overlay {
+.overlay 
+{
 	display: none;
 	position: fixed;
 	top: 0; left: 0;
@@ -65,7 +77,9 @@ header h1 {
 	background: #57575769;
 	z-index: 99;
 }
-.window {
+
+.window 
+{
 	position: absolute;
 	top: 50%; left: 50%;
 	transform: translate(-50%, -50%);
@@ -77,10 +91,12 @@ header h1 {
 	width: 420px;
 	max-width: 95vw;
 	height: 320px;
-	font-family: Consolas, monospace;
+	font-family: monospace;
 	font-size: 12px;
 }
-.windowheader {
+
+.windowheader
+{
 	background: linear-gradient(to right, #010080, #020080);
 	height: 24px;
 	display: flex;
@@ -88,39 +104,60 @@ header h1 {
 	padding: 0 4px;
 	user-select: none;
 }
-.windowheader p {
+
+.windowheader p
+{
 	flex: 1;
-	color: white;
+	color: #FFFFFF;
 	font-weight: bold;
 	font-size: 10px;
 	font-family: 'Trebuchet Ms', sans-serif;
 	margin: 0;
 }
-.windowheader button {
+
+.windowheader button
+{
 	width: 18px; height: 18px;
 	font-size: 8px;
 	border-top: 2px solid #fefefe;
 	border-right: 2px solid #4d4d4d;
 	border-bottom: 2px solid #3f3f3f;
 	border-left: 2px solid #e5e5e5;
-	background-color: #ff9a9a;
+	background-color: #ff0000;
 	padding: 0;
 	cursor: default;
 }
-.windowheader button:active {
+
+.windowheader button:active
+{
 	border-top: 2px solid #3f3f3f;
 	border-right: 2px solid #fefefe;
 	border-bottom: 2px solid #fefefe;
 	border-left: 2px solid #4d4d4d;
 }
 
-iframe {
-	display: block;
-	margin: 6px auto 0;
-	border-top: 1px inset #3f3f3f;
-	border-right: 1px inset #e5e5e5;
-	border-bottom: 1px inset #fefefe;
-	border-left: 1px inset #4d4d4d;
-	width: 96%;
-	height: 260px;
+.windowsearchbar
+{
+	position: absolute;
+	top: 13%; left: 50%;
+	transform: translate(-50%, -50%);
+	border: 2px solid #fefefe;
+	background: #FFFFFF;
+	width: 400px;
+	max-width: 95vw;
+	height: 20px;
+	font-family: monospace;
+	font-size: 12px;
+}
+
+.windowsearchbartext
+{
+	position: absolute;
+	top: 13%; left: 50%;
+	transform: translate(-83%, -10%);
+	width: 400px;
+	max-width: 95vw;
+	height: 20px;
+	font-family: monospace;
+	font-size: 12px;
 }
