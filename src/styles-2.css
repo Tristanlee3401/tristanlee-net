@@ -136,28 +136,41 @@ header h1
 	border-left: 2px solid #4d4d4d;
 }
 
-.windowsearchbar
+.browser-address-row
 {
-	position: absolute;
-	top: 13%; left: 50%;
-	transform: translate(-50%, -50%);
-	border: 2px solid #fefefe;
-	background: #FFFFFF;
-	width: 400px;
-	max-width: 95vw;
-	height: 20px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 10px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.browser-label
+{
 	font-family: monospace;
 	font-size: 12px;
 }
 
-.windowsearchbartext
+.windowsearchbar
 {
-	position: absolute;
-	top: 13%; left: 50%;
-	transform: translate(-83%, -10%);
-	width: 400px;
-	max-width: 95vw;
-	height: 20px;
-	font-family: monospace;
-	font-size: 12px;
+	flex: 1;
+    border: 2px solid #fefefe;
+    background: #FFFFFF;
+    height: 25px;
+    font-family: monospace;
+    font-size: 12px;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.window 
+{
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+	box-sizing: border-box;
 }
