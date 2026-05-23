@@ -1,9 +1,36 @@
-document.addEventListener('DOMContentLoaded', function() 
+// document.addEventListener('DOMContentLoaded', function() 
+// {
+//     const savedTheme = localStorage.getItem('theme');
+//     if (savedTheme === 'dark')
+// 	{
+//         document.body.classList.add('dark-mode');
+//     }
+// 	if (document.getElementById("text"))
+// 	{
+// 		animate_text("hello, world");
+// 	}
+// });
+
+// function toggleTheme()
+// {
+//     document.body.classList.toggle('dark-mode');
+//
+//     // Save preference to localStorage
+//     if (document.body.classList.contains('dark-mode')) {
+//         localStorage.setItem('theme', 'dark');
+//     } else {
+//         localStorage.setItem('theme', 'light');
+//     }
+// }
+
+document.addEventListener('DOMContentLoaded', function()
 {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        document.body.classList.add('dark-mode');
-    }
+	const savedTheme = localStorage.getItem('theme');
+	if (savedTheme === 'dark')
+	{
+		document.documentElement.classList.add('dark');
+	}
+
 	if (document.getElementById("text"))
 	{
 		animate_text("hello, world");
@@ -12,15 +39,18 @@ document.addEventListener('DOMContentLoaded', function()
 
 function toggleTheme()
 {
-    document.body.classList.toggle('dark-mode');
+	document.documentElement.classList.toggle('dark');
 
-    // Save preference to localStorage
-    if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-    } else {
-        localStorage.setItem('theme', 'light');
-    }
+	if (document.documentElement.classList.contains('dark'))
+	{
+		localStorage.setItem('theme', 'dark');
+	}
+	else
+	{
+		localStorage.setItem('theme', 'light');
+	}
 }
+
 
 function isValidEmail(email)
 {

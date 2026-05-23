@@ -16,6 +16,7 @@
                     <li class="nav-item"><a class="nav-link" href="{{ '/interests/' | url }}">interests</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ '/contact/' | url }}">contact</a></li>
                 </ul>
+
                 <button class="btn btn-sm btn-outline-secondary ms-auto" onclick="toggleTheme()">toggle theme</button>
             </div>
         </nav>

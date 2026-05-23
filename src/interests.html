@@ -1,28 +1,32 @@
 ---
-layout: bootstrap.liquid
+layout: tailwind.liquid
 title: Interests
 permalink: "/interests/"
 ---
-<h1>my interests</h1>
-<hr>
+<h1 class="text-3xl font-bold mb-4">my interests</h1>
+<hr class="border-black dark:border-white mb-6">
 
-<div class="interest-box">
-    <h3>programming</h3>
-    <p>i like to code.</p>
+<div class="space-y-6">
+    <div class="border-l-2 border-black dark:border-white pl-4">
+        <h3 class="text-xl font-bold">programming</h3>
+        <p class="text-gray-600 dark:text-gray-400">i like to code.</p>
+    </div>
+
+    <div class="border-l-2 border-black dark:border-white pl-4">
+        <h3 class="text-xl font-bold">read</h3>
+        <p class="text-gray-600 dark:text-gray-400">interested in tech.</p>
+    </div>
+
+    <div class="border-l-2 border-black dark:border-white pl-4">
+        <h3 class="text-xl font-bold">piano</h3>
+        <p class="text-gray-600 dark:text-gray-400">i play the piano</p>
+    </div>
 </div>
 
-<div class="interest-box">
-    <h3>read</h3>
-    <p>interested in tech.</p>
-</div>
-
-<div class="interest-box">
-    <h3>piano</h3>
-    <p>i play the piano</p>
-</div>
-
-<blockquote class="my-4">
+<blockquote class="my-8 italic border-l-2 border-gray-300 dark:border-gray-700 pl-4 text-gray-700 dark:text-gray-300">
     <p>"Avoiding complexity reduces bugs."</p>
 </blockquote>
 
-<a href="{{ '/' | url }}" class="btn btn-sm btn-outline-secondary mt-3">back</a>
+<a href="{{ '/' | url }}" class="inline-block border border-black dark:border-white px-4 py-1 text-sm hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition">
+    back
+</a>
