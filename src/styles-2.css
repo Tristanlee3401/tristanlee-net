@@ -3,7 +3,7 @@
    ============================================================ */
 .home {
     min-height: 100vh;
-    background-image: url('images/sky1.jpg');
+    background-image: url('images/sky.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
@@ -81,7 +81,7 @@ header h1 {
 	font-size: 12px;
 }
 .windowheader {
-	background: linear-gradient(to right, #6cbfd9, #f1f2da);
+	background: linear-gradient(to right, #010080, #020080);
 	height: 24px;
 	display: flex;
 	align-items: center;
@@ -113,6 +113,7 @@ header h1 {
 	border-bottom: 2px solid #fefefe;
 	border-left: 2px solid #4d4d4d;
 }
+
 iframe {
 	display: block;
 	margin: 6px auto 0;
@@ -123,4 +124,3 @@ iframe {
 	width: 96%;
 	height: 260px;
 }
-
