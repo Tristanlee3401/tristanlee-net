@@ -76,28 +76,35 @@
     <body class="font-mono bg-[#F5F5F5] dark:bg-black text-black dark:text-white transition-colors duration-200">
         <nav class="border-b border-black dark:border-white">
             <div class="container mx-auto px-6 py-4 flex flex-wrap justify-between items-center">
-                <a class="text-xl font-bold tracking-tight" href="{{ '/' | url }}">
-                    home
+                <a class="text-xl font-bold hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="{{ '/' | url }}">
+                    /home/
                 </a>
 			<ul class="flex flex-wrap gap-4 sm:gap-6">
 				{% unless page.url == '/about/' %}
 					<li>
 						<a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="{{ '/about/' | url }}">
-							about
+							abt/
 						</a>
 					</li>
 				{% endunless %}
 				{% unless page.url == '/interests/' %}
 					<li>
 						<a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="{{ '/interests/' | url }}">
-							interests
+							int/
+						</a>
+					</li>
+				{% endunless %}
+				{% unless page.url == '/projects/' %}
+					<li>
+						<a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="{{ '/projects/' | url }}">
+							proj/
 						</a>
 					</li>
 				{% endunless %}
 				{% unless page.url == '/contact/' %}
 					<li>
 						<a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="{{ '/contact/' | url }}">
-							contact
+							ctc/
 						</a>
 					</li>
 				{% endunless %}
