@@ -1,56 +1,64 @@
-// document.addEventListener('DOMContentLoaded', function() 
-// {
-//     const savedTheme = localStorage.getItem('theme');
-//     if (savedTheme === 'dark')
-// 	{
-//         document.body.classList.add('dark-mode');
-//     }
-// 	if (document.getElementById("text"))
-// 	{
-// 		animate_text("hello, world");
-// 	}
-// });
-
-// function toggleTheme()
-// {
-//     document.body.classList.toggle('dark-mode');
-//
-//     // Save preference to localStorage
-//     if (document.body.classList.contains('dark-mode')) {
-//         localStorage.setItem('theme', 'dark');
-//     } else {
-//         localStorage.setItem('theme', 'light');
-//     }
-// }
+const html = document.documentElement
+const button = document.getElementById('themeToggle');
 
 document.addEventListener('DOMContentLoaded', function()
 {
 	const savedTheme = localStorage.getItem('theme');
+
 	if (savedTheme === 'dark')
 	{
-		document.documentElement.classList.add('dark');
+		html.classList.add('dark');
 	}
 
+	// Set initial button label
+	if (button)
+	{
+		if (html.classList.contains('dark'))
+		{
+			button.textContent = 'dark to light';
+		}
+		else
+		{
+			button.textContent = 'light to dark';
+		}
+	}
+
+	// Start animation if on index
 	if (document.getElementById("text"))
 	{
-		animate_text("hello, world");
+		animateText("hello, world");
 	}
 });
 
 function toggleTheme()
 {
-	document.documentElement.classList.toggle('dark');
+	const itWasDark = html.classList.contains('dark');
 
-	if (document.documentElement.classList.contains('dark'))
-	{
-		localStorage.setItem('theme', 'dark');
-	}
-	else
+	html.classList.toggle('dark');
+	
+	// Saves new theme to localStorage
+	if (itWasDark)
 	{
 		localStorage.setItem('theme', 'light');
 	}
-}
+	else
+	{
+		localStorage.setItem('theme', 'dark');
+	}
 
+	// Updates button text label
+	if (button) 
+	{
+		if (itWasDark)
+		{
+			button.textContent = 'light to dark';
+		}
+		else
+		{
+			button.textContent = 'dark to light';
+		}
+	}
+}
 
 function isValidEmail(email)
 {
@@ -60,9 +68,13 @@ function isValidEmail(email)
 
 function submitForm()
 {
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
+    const nameField = document.getElementById('name');
+    const emailField = document.getElementById('email');
+    const messageField = document.getElementById('message');
+
+    const name = nameField.value.trim();
+    const email = emailField.value.trim();
+    const message = messageField.value.trim();
 
     if (!name || !email || !message) {
         alert("Please fill all fields: Name, Email, and Message.");
@@ -84,20 +96,20 @@ function submitForm()
     const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
     window.location.href = mailtoLink;
     alert("Preparing your message. Your email client will now open. Thanks, " + name + "!");
-    document.getElementById('name').value = '';
-    document.getElementById('email').value = '';
-    document.getElementById('message').value = '';
+    nameField.value = '';
+    emailField.value = '';
+    messageField.value = '';
 }
 
-function animate_text(text)
+function animateText(text)
 {
-	const el = document.getElementById("text");
+	const element = document.getElementById("text");
 	let 
 		i = 0, 
 		erase = false, 
 		pause = false;
 
-	function type_rate()
+	function typeRate()
 	{
 		// Case 1 : Pause
 		if (pause)
@@ -108,33 +120,33 @@ function animate_text(text)
 		// Case 2 : Erase
 		if (erase)
 		{
-			el.textContent = text.slice(0, --i);
+			element.textContent = text.slice(0, --i);
 			if (i === 0)
 			{
 				pause = true;
-				setTimeout(start_pause_time, 2000)
+				setTimeout(startPauseTime, 4000)
 			}
 		}
 		// Case 3 : Type
 		else
 		{
-			el.textContent = text.slice(0, ++i);
+			element.textContent = text.slice(0, ++i);
 			if (i === text.length)
 			{
 				pause = true;
-				setTimeout(end_pause_time,2000);
+				setTimeout(endPauseTime,4000);
 			}
 		}
 	}
-	setInterval(type_rate,150);
+	setInterval(typeRate,150);
 
-	function start_pause_time()
+	function startPauseTime()
 	{
 		erase = false;
 		pause = false;
 	}
 
-	function end_pause_time()
+	function endPauseTime()
 	{
 		erase = true;
 		pause = false;

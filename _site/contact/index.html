@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="initial-scale=1, width=device-width">
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script>
 			tailwind.config = 
 			{
                 darkMode: 'class',
@@ -19,54 +19,85 @@
                     }
                 }
             }
-        </script>
-	<style type="text/css">
-		.caret {
-			display: inline-block;
-			width: 15px;
-			height: 30px;
-			background-color: currentColor;
-			animation: blink 1s infinite;
-		}
-		@keyframes blink { 50% { opacity: 0; } }
-		.home-thumb-full {
-			max-width: 100%;
-			height: auto;
-			border: 2px solid transparent;
-			transition: border-color 0.2s ease;
-		}
-		.home-thumb-full:hover {
-			border-color: currentColor;
-		}
-		ul 
-		{ 
-			list-style-type: disc; 
-			margin-left: 1.5rem;
-		}
 
-		hr
-		{
-			border: 0;
-			border-top: 1px solid currentColor;
-			margin:1.5rem 0;
-			opacity: 1;
-		}
-	</style>
-        <title>Contact</title>
+			if (localStorage.getItem('theme') === 'dark')
+			{
+				// Restore saved theme before page renders to prevent flash of wrong theme
+				document.documentElement.classList.add('dark');
+			}
+		</script>
+
+		<style type="text/css">
+			.caret 
+			{
+				display: inline-block;
+				width: 15px;
+				height: 30px;
+				background-color: currentColor;
+				animation: blink 1s infinite;
+			}
+			@keyframes blink 
+			{ 
+				50%
+				{ 
+					opacity: 0;
+				} 
+			}
+
+			.home-thumb-full
+			{
+				max-width: 100%;
+				height: auto;
+				border: 2px solid transparent;
+				transition: border-color 0.2s ease;
+			}
+
+			.home-thumb-full:hover
+			{
+				border-color: currentColor;
+			}
+
+			ul 
+			{ 
+				list-style-type: disc; 
+				margin-left: 1.5rem;
+			}
+
+			hr
+			{
+				border: 0;
+				border-top: 1px solid currentColor;
+				margin:1.5rem 0;
+				opacity: 1;
+			}
+		</style>
+	<title>Contact</title>
     </head>
     <body class="font-mono bg-[#F5F5F5] dark:bg-black text-black dark:text-white transition-colors duration-200">
         <nav class="border-b border-black dark:border-white">
             <div class="container mx-auto px-6 py-4 flex flex-wrap justify-between items-center">
-                <a class="text-xl font-bold tracking-tight" href="/personal/">
+                <a class="text-xl font-bold tracking-tight" href="/">
                     home
                 </a>
 			<ul class="flex flex-wrap gap-4 sm:gap-6">
-				<li><a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/personal/about/">about</a></li>
-				<li><a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/personal/interests/">interests</a></li>
-				<li><a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/personal/contact/">contact</a></li>
+				
+					<li>
+						<a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/about/">
+							about
+						</a>
+					</li>
+				
+				
+					<li>
+						<a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/interests/">
+							interests
+						</a>
+					</li>
+				
+				
 			</ul>
-                <button class="border border-black dark:border-white px-3 py-1 text-sm hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition" onclick="toggleTheme()">
-                    toggle theme
+                <button id="themeToggle" class="border border-black dark:border-white px-3 py-1 text-sm hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition" onclick="toggleTheme()">
+					toggle theme
                 </button>
             </div>
         </nav>
@@ -124,16 +155,11 @@
     </ul>
 </section>
 
-<a href="/personal/" class="inline-block border border-black dark:border-white px-4 py-1 text-sm hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition">
-    back
-</a>
-
         </main>
 
         <footer class="text-center py-8 text-sm text-gray-500">
             <p>Copyright &copy; 2026 Tristan Lee</p>
         </footer>
-
-        <script src="/personal/assets/js/script.js"></script>
+        <script src="/assets/js/script.js"></script>
     </body>
 </html>
