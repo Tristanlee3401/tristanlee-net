@@ -4,7 +4,17 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="initial-scale=1, width=device-width">
 		<meta name="description" content="Tristan Lee — CS student, developer, pianist.">
+		<meta property="og:title" content="{{ title }}">
+		<meta property="og:description" content="Tristan Lee - CS student, developer, pianist.">
+		<meta property="og:url" content="https://tristanlee.net{{ page.url }}">
+		<meta property="og:url" content="website">
+		<link rel="canonical" href="https://tristanlee.net{{ page.url }}">
 		<link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
+		<link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon/favicon.ico' | url }}">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicon/favicon-32x32.png' | url }}">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicon/favicon-16x16.png' | url }}">
+		<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/favicon/apple-touch-icon.png' | url }}">
+		<link rel="manifest" href="{{ '/assets/images/favicon/site.webmanifest' | url }}">
         <script>
             if (localStorage.getItem('theme') === 'dark')
             {
