@@ -15,11 +15,11 @@ document.addEventListener('DOMContentLoaded', function()
 	{
 		if (html.classList.contains('dark'))
 		{
-			button.textContent = 'dark to light';
+			button.textContent = '「阴」';
 		}
 		else
 		{
-			button.textContent = 'light to dark';
+			button.textContent = '「阳」';
 		}
 	}
 
@@ -51,11 +51,11 @@ function toggleTheme()
 	{
 		if (itWasDark)
 		{
-			button.textContent = 'light to dark';
+			button.textContent = '「阳」';
 		}
 		else
 		{
-			button.textContent = 'dark to light';
+			button.textContent = '「阴」';
 		}
 	}
 }

@@ -97,7 +97,6 @@
                     {% endunless %}
                 </ul>
                 <button id="themeToggle" class="border border-black dark:border-white px-3 py-1 text-sm hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition" onclick="toggleTheme()">
-                    toggle theme
                 </button>
             </div>
         </nav>
@@ -105,7 +104,13 @@
             {{ content }}
         </main>
         <footer class="text-center py-8 text-sm text-gray-500">
-            <p>Copyright &copy; {{ year }} Tristan Lee</p>
+			<div class="mb-2">
+				<a href="https://instagram.com/mr.tristanlee/" class="hover:text-black dark:hover:text-white transition duration-200">instagram</a>
+				<a href="https://linkedin.com/in/tristanlee3401/" class="hover:text-black dark:hover:text-white transition duration-200">linkedin</a>
+			</div>
+			<p>
+				Copyright &copy; {{ year }} Tristan Lee
+			</p>
         </footer>
         <script src="{{ '/assets/js/script.js' | url }}"></script>
     </body>
