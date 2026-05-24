@@ -23,6 +23,11 @@ document.addEventListener('DOMContentLoaded', function()
 		}
 	}
 
+	const nav = document.querySelector('nav');
+	if (nav)
+	{
+		document.documentElement.style.setProperty('--nav-height', nav.offsetHeight + 'px');
+	}
 	// Start animation if on index
 	if (document.getElementById("text"))
 	{

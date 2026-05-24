@@ -45,6 +45,10 @@
             {
                 border-color: currentColor;
             }
+			main
+			{
+				padding-top: calc(var(--nav-height, 0px) + 2.5rem);
+			}
             main ul 
             { 
                 list-style-type: disc; 
@@ -61,11 +65,9 @@
         <title>Tristan Lee</title>
     </head>
     <body class="font-mono bg-[#F5F5F5] dark:bg-black text-black dark:text-white transition-colors duration-200">
-        <nav class="border-b border-black dark:border-white">
-            <div class="container mx-auto px-6 py-4 flex flex-wrap justify-between items-center">
-                <a class="text-xl font-bold hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/personal/">
-                    /home/
-                </a>
+        <nav class="border-b border-black dark:border-white fixed w-full top-0 left-0 z-50 bg-[#F5F5F5] dark:bg-black">
+            <div class="container mx-auto px-6 py-4 flex flex-wrap justify-between items-center ">
+				
                 <ul class="flex flex-wrap gap-4 sm:gap-6 text-base">
                     
                         <li>
@@ -100,7 +102,7 @@
                 </button>
             </div>
         </nav>
-        <main class="container mx-auto px-6 py-10">
+        <main class="container mx-auto px-6 pb-10">
             
 <header class="text-3xl font-bold mb-4 block">
 	<span id ="text"></span><span class="caret"></span>
