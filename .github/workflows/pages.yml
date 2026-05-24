@@ -33,7 +33,7 @@ jobs:
         run: npm ci
 
       - name: Build Tailwind
-        run: npx @tailwindcss/cli -r ./src/assets/css/input.css -o ./src/assets/css/styles.css
+        run: npx @tailwindcss/cli -i ./src/assets/css/input.css -o ./src/assets/css/styles.css
 
       - name: Build Eleventy
         run: npx @11ty/eleventy
