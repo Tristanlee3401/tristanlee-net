@@ -3,75 +3,52 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="initial-scale=1, width=device-width">
-		<script src="https://cdn.tailwindcss.com"></script>
-		<script>
-			tailwind.config = 
-			{
-                darkMode: 'class',
-				theme: 
-				{
-					extend: 
-					{
-						fontFamily:
-						{
-                            mono: ['"Courier New"', 'monospace'],
-                        },
-                    }
-                }
+		<meta name="description" content="Tristan Lee — CS student, developer, pianist.">
+		<link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
+        <script>
+            if (localStorage.getItem('theme') === 'dark')
+            {
+                document.documentElement.classList.add('dark');
             }
-
-			if (localStorage.getItem('theme') === 'dark')
-			{
-				// Restore saved theme before page renders to prevent flash of wrong theme
-				document.documentElement.classList.add('dark');
-			}
-		</script>
-
-		<style type="text/css">
-			.caret 
-			{
-				display: inline-block;
-				width: 15px;
-				height: 30px;
-				background-color: currentColor;
-				animation: blink 1s infinite;
-			}
-			@keyframes blink 
-			{ 
-				50%
-				{ 
-					opacity: 0;
-				} 
-			}
-
-			.home-thumb-full
-			{
-				max-width: 100%;
-				height: auto;
-				border: 2px solid transparent;
-				transition: border-color 0.2s ease;
-			}
-
-			.home-thumb-full:hover
-			{
-				border-color: currentColor;
-			}
-
-			ul 
-			{ 
-				list-style-type: disc; 
-				margin-left: 1.5rem;
-			}
-
-			hr
-			{
-				border: 0;
-				border-top: 1px solid currentColor;
-				margin:1.5rem 0;
-				opacity: 1;
-			}
-		</style>
-	<title>{{ title }}</title>
+        </script>
+        <style type="text/css">
+            .caret 
+            {
+                display: inline-block;
+                width: 15px;
+                height: 30px;
+                background-color: currentColor;
+                animation: blink 1s infinite;
+            }
+            @keyframes blink 
+            { 
+                50% { opacity: 0; } 
+            }
+            .home-thumb-full
+            {
+                max-width: 100%;
+                height: auto;
+                border: 2px solid transparent;
+                transition: border-color 0.2s ease;
+            }
+            .home-thumb-full:hover
+            {
+                border-color: currentColor;
+            }
+            main ul 
+            { 
+                list-style-type: disc; 
+                margin-left: 1.5rem;
+            }
+            hr
+            {
+                border: 0;
+                border-top: 1px solid currentColor;
+                margin: 1.5rem 0;
+                opacity: 1;
+            }
+        </style>
+        <title>{{ title }}</title>
     </head>
     <body class="font-mono bg-[#F5F5F5] dark:bg-black text-black dark:text-white transition-colors duration-200">
         <nav class="border-b border-black dark:border-white">
@@ -79,46 +56,44 @@
                 <a class="text-xl font-bold hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="{{ '/' | url }}">
                     /home/
                 </a>
-			<ul class="flex flex-wrap gap-4 sm:gap-6">
-				{% unless page.url == '/about/' %}
-					<li>
-						<a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="{{ '/about/' | url }}">
-							abt/
-						</a>
-					</li>
-				{% endunless %}
-				{% unless page.url == '/interests/' %}
-					<li>
-						<a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="{{ '/interests/' | url }}">
-							int/
-						</a>
-					</li>
-				{% endunless %}
-				{% unless page.url == '/projects/' %}
-					<li>
-						<a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="{{ '/projects/' | url }}">
-							proj/
-						</a>
-					</li>
-				{% endunless %}
-				{% unless page.url == '/contact/' %}
-					<li>
-						<a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="{{ '/contact/' | url }}">
-							ctc/
-						</a>
-					</li>
-				{% endunless %}
-			</ul>
+                <ul class="flex flex-wrap gap-4 sm:gap-6 text-base">
+                    {% unless page.url == '/about/' %}
+                        <li>
+                            <a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="{{ '/about/' | url }}">
+                                abt/
+                            </a>
+                        </li>
+                    {% endunless %}
+                    {% unless page.url == '/interests/' %}
+                        <li>
+                            <a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="{{ '/interests/' | url }}">
+                                int/
+                            </a>
+                        </li>
+                    {% endunless %}
+                    {% unless page.url == '/projects/' %}
+                        <li>
+                            <a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="{{ '/projects/' | url }}">
+                                proj/
+                            </a>
+                        </li>
+                    {% endunless %}
+                    {% unless page.url == '/contact/' %}
+                        <li>
+                            <a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="{{ '/contact/' | url }}">
+                                ctc/
+                            </a>
+                        </li>
+                    {% endunless %}
+                </ul>
                 <button id="themeToggle" class="border border-black dark:border-white px-3 py-1 text-sm hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition" onclick="toggleTheme()">
-					toggle theme
+                    toggle theme
                 </button>
             </div>
         </nav>
-
         <main class="container mx-auto px-6 py-10">
             {{ content }}
         </main>
-
         <footer class="text-center py-8 text-sm text-gray-500">
             <p>Copyright &copy; {{ year }} Tristan Lee</p>
         </footer>

@@ -3,75 +3,52 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="initial-scale=1, width=device-width">
-		<script src="https://cdn.tailwindcss.com"></script>
-		<script>
-			tailwind.config = 
-			{
-                darkMode: 'class',
-				theme: 
-				{
-					extend: 
-					{
-						fontFamily:
-						{
-                            mono: ['"Courier New"', 'monospace'],
-                        },
-                    }
-                }
+		<meta name="description" content="Tristan Lee — CS student, developer, pianist.">
+		<link rel="stylesheet" href="/assets/css/styles.css">
+        <script>
+            if (localStorage.getItem('theme') === 'dark')
+            {
+                document.documentElement.classList.add('dark');
             }
-
-			if (localStorage.getItem('theme') === 'dark')
-			{
-				// Restore saved theme before page renders to prevent flash of wrong theme
-				document.documentElement.classList.add('dark');
-			}
-		</script>
-
-		<style type="text/css">
-			.caret 
-			{
-				display: inline-block;
-				width: 15px;
-				height: 30px;
-				background-color: currentColor;
-				animation: blink 1s infinite;
-			}
-			@keyframes blink 
-			{ 
-				50%
-				{ 
-					opacity: 0;
-				} 
-			}
-
-			.home-thumb-full
-			{
-				max-width: 100%;
-				height: auto;
-				border: 2px solid transparent;
-				transition: border-color 0.2s ease;
-			}
-
-			.home-thumb-full:hover
-			{
-				border-color: currentColor;
-			}
-
-			ul 
-			{ 
-				list-style-type: disc; 
-				margin-left: 1.5rem;
-			}
-
-			hr
-			{
-				border: 0;
-				border-top: 1px solid currentColor;
-				margin:1.5rem 0;
-				opacity: 1;
-			}
-		</style>
-	<title>Interests</title>
+        </script>
+        <style type="text/css">
+            .caret 
+            {
+                display: inline-block;
+                width: 15px;
+                height: 30px;
+                background-color: currentColor;
+                animation: blink 1s infinite;
+            }
+            @keyframes blink 
+            { 
+                50% { opacity: 0; } 
+            }
+            .home-thumb-full
+            {
+                max-width: 100%;
+                height: auto;
+                border: 2px solid transparent;
+                transition: border-color 0.2s ease;
+            }
+            .home-thumb-full:hover
+            {
+                border-color: currentColor;
+            }
+            main ul 
+            { 
+                list-style-type: disc; 
+                margin-left: 1.5rem;
+            }
+            hr
+            {
+                border: 0;
+                border-top: 1px solid currentColor;
+                margin: 1.5rem 0;
+                opacity: 1;
+            }
+        </style>
+        <title>Interests</title>
     </head>
     <body class="font-mono bg-[#F5F5F5] dark:bg-black text-black dark:text-white transition-colors duration-200">
         <nav class="border-b border-black dark:border-white">
@@ -79,61 +56,54 @@
                 <a class="text-xl font-bold hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/">
                     /home/
                 </a>
-			<ul class="flex flex-wrap gap-4 sm:gap-6">
-				
-					<li>
-						<a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/about/">
-							abt/
-						</a>
-					</li>
-				
-				
-				
-					<li>
-						<a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/projects/">
-							proj/
-						</a>
-					</li>
-				
-				
-					<li>
-						<a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/contact/">
-							ctc/
-						</a>
-					</li>
-				
-			</ul>
+                <ul class="flex flex-wrap gap-4 sm:gap-6 text-base">
+                    
+                        <li>
+                            <a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/about/">
+                                abt/
+                            </a>
+                        </li>
+                    
+                    
+                    
+                        <li>
+                            <a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/projects/">
+                                proj/
+                            </a>
+                        </li>
+                    
+                    
+                        <li>
+                            <a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/contact/">
+                                ctc/
+                            </a>
+                        </li>
+                    
+                </ul>
                 <button id="themeToggle" class="border border-black dark:border-white px-3 py-1 text-sm hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition" onclick="toggleTheme()">
-					toggle theme
+                    toggle theme
                 </button>
             </div>
         </nav>
-
         <main class="container mx-auto px-6 py-10">
-            <h1 class="text-3xl font-bold mb-4">
-	my interests
-</h1>
+            <h1 class="text-3xl font-bold mb-4">my interests</h1>
 <hr class="border-black dark:border-white mb-6">
-
 <div class="space-y-6">
     <div class="border-l-2 border-black dark:border-white pl-4">
-        <h3 class="text-xl font-bold">programming</h3>
-        <p class="text-black dark:text-white">Working with bash, C, JavaScript, and Python</p>
+        <h2 class="text-lg font-bold">programming</h2>
+        <p class="text-base">Working with bash, C, JavaScript, and Python</p>
     </div>
-
     <div class="border-l-2 border-black dark:border-white pl-4">
-        <h3 class="text-xl font-bold">read</h3>
-        <p class="text-black dark:text-white">Various</p>
+        <h2 class="text-lg font-bold">reading</h2>
+        <p class="text-base">Various</p>
     </div>
-
     <div class="border-l-2 border-black dark:border-white pl-4">
-        <h3 class="text-xl font-bold">piano</h3>
-        <p class="text-black dark:text-white">Since 2009. Mostly Classical and Jazz</p>
+        <h2 class="text-lg font-bold">piano</h2>
+        <p class="text-base">Since 2009. Mostly Classical and Jazz</p>
     </div>
 </div>
 
         </main>
-
         <footer class="text-center py-8 text-sm text-gray-500">
             <p>Copyright &copy; 2026 Tristan Lee</p>
         </footer>
