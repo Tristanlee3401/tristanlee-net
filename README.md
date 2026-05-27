@@ -33,9 +33,6 @@ src/
 │   └── year.js
 ├── home.html
 ├── _includes
-│   ├── archive
-│   │   └── bootstrap.liquid
-│   ├── footer.liquid
 │   ├── native.liquid
 │   └── tailwind.liquid
 ├── index.html
@@ -43,5 +40,5 @@ src/
 ├── projects.html
 └── robots.txt
 
-9 directories, 31 files
+8 directories, 29 files
 </pre>
