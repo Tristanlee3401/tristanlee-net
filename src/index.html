@@ -29,67 +29,47 @@ title: Tristan Lee
 </h2>
 
 <div class="diary-links font-mono flex flex-wrap gap-6 mb-6 text-base">
-    <button class="hover:underline" onclick="openDiary('2026');">
-		2026/
-	</button>
+	{% for dailyEntries in diary %}
+		<button class="hover:underline" onclick="openDiary('{{ yearData.year }}');">
+			{{ dailyEntries.year }}/
+		</button>
+	{% endfor %}
 </div>
 
-<div id="diary-panel" class="hidden">
-    <div class="flex items-center justify-between mb-4">
-        <span id="diary-title" class="font-mono text-base">
-		</span>
-        <button class="hover:text-gray-500 transition-transform duration-200 hover:-translate-y-[3px] text-base" onclick="closeDiary();">
-			../
-		</button>
-    </div>
-    <div id="diary-body" class="space-y-4 font-mono text-sm">
+{% for dailyEntries in diary %}
+	<div id="diary-{{ yearData.year }}" class="hidden">
+		<div class="justify-between flex mb-4 font-mono text-base">
+			<span>
+				{{ year }}/
+			</span>
+			<button class ="hover:text-gray-500 transition-transform duration-200 hover:-translate-y-[3px]" onclick="closeDiary();">
+				../
+			</button>
+		</div>
+		{% for entry in dailyEntries.entries %}
+			<div class="mb-4 font-mono text-sm">
+				<span class="text-gray-500">{{ entry.date }}</span>
+				{% for paragraph in entry.text %}
+					<br>
+					<p>
+						{{ paragraph }}
+					</p>
+				{% endfor %}
+			</div>
+		{% endfor %}
 	</div>
-</div>
+{% endfor %}
 
 <script>
-	const diaryData = {
-		'2026': [
-			{ date: '2026-06-04', text: 'Applied for jobs, scoured job listings on Linkedin, feeling a certain lack of interest and motivation to continue pursuing work in Singapore. However, it is still a good and simple day programming, revising Anki flashcards and Duolingo.' },
-			{ date: '2026-06-03', text: 'Revised Anki flashcard first thing in the morning. I need to build this habit.' },
-			{ date: '2026-06-02', text: 'Explored local-hosted open source AI models Ollama. Other than that, not much motivation to do much else.' },
-			{ date: '2026-06-01', text: 'ID 0730 Morning ferry back to Singapore. Arrival 1030 local time. Singaporean Uncle Ang from Bukit Panjang accompanies.' },
-			{ date: '2026-05-31', text: "Sent off Serlina's yeye to the next world at 1230. Restorations follow suit. Return ferry booked for next morning." },
-			{ date: '2026-05-30', text: 'Breakfast from Sinar Bodhi Jl. Bakar Batu. 3 veges, 1 meat. Serlina has tamie.' },
-			{ date: '2026-05-29', text: 'Ferry to Tanjungpinang in the morning.' },
-			{ date: '2026-05-28', text: 'Explored wmenu versus wofi and how to debloat, whilst still figuring out which is ideal for my Linux setup. Wayland or x11? MaRe not feeling well today, perhaps it was due to fatigue from all the events that happened recently. Serlina was there to bring her to see a doctor in Tanjungpinang.' },
-			{ date: '2026-05-27', text: 'Today I worked on my personal site by cleaning up and adding the diary section you are looking at. 1130 Ferry ticket to Tanjungpinang bought.' },
-			{ date: '2026-05-26', text: "An important day for mum. Facial spa for her in the morning. For lunch, we had Tonkatsu Ramen. Grandma, Mum and I celebrated with a Strawberry Rose flavoured cake and Din Tai Fung dinner." },
-			{ date: '2026-05-25', text: "A sudden passing of Serlina's grandpa. A travel from Tanjung Pinang, to Batam and Johor meant a late night arrival. Midnight rendezvous. Cardiac Arrest at 03:30. Frantic calls and pleas for help. Ambulance on site at 04:30. Police at 05:30. Arrangements follow suit. Same day return at 16:00 finalised." },
-		],
-	};
-
 	function openDiary(year)
 	{
-		document.getElementById('diary-title').textContent = year + '/';
-
-		document.getElementById('diary-body').innerHTML = diaryData[year]
-			.map
-			(
-				entry => 
-					`
-						<p class="mb-4">
-							<span class="text-gray-500">
-								${entry.date}
-							</span>
-							<br>
-							${entry.text}
-						</p>
-					`
-			)
-			.join('');
-
+		document.getElementById('diary-' + year).classList.remove('hidden');
 		document.querySelector('.diary-links').classList.add('hidden');
-		document.getElementById('diary-panel').classList.remove('hidden');
 	}
 
 	function closeDiary()
 	{
-		document.getElementById('diary-panel').classList.add('hidden');
+		document.querySelectorAll('[id^="diary-"]').forEach(el => el.classList.add('hidden'));
 		document.querySelector('.diary-links').classList.remove('hidden');
 	}
 </script>

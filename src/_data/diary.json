@@ -1,0 +1,87 @@
+[
+	{
+		"year": "2026",
+		"entries":
+		[
+			{ 
+				"date": "2026-06-04", 
+				"text": 
+				[
+					"Applied for jobs, scoured job listings on Linkedin, feeling a certain lack of interest and motivation to continue pursuing work in Singapore. However, it is still a good and simple day programming, revising Anki flashcards and Duolingo.",
+					"Major changes I have made to index.html. Cleaned up the page by removing dead code and incorporated JSON for long-term maintainability. It's great!"
+				]
+			},
+			{ 
+				"date": "2026-06-03", 
+				"text": 
+				[
+					"Revised Anki flashcard first thing in the morning. I need to build this habit." 
+				]
+			},
+			{
+				"date": "2026-06-02", 
+				"text": 
+				[
+					"Explored local-hosted open source AI models Ollama. Other than that, not much motivation to do much else."
+				]
+			},
+			{ 
+				"date": "2026-06-01", 
+				"text": 
+				[
+					"ID 0730 Morning ferry back to Singapore. Arrival 1030 local time. Singaporean Uncle Ang from Bukit Panjang accompanies."
+				]
+			},
+			{ 
+				"date": "2026-05-31", 
+				"text": 
+				[
+					"Sent off Serlina's yeye to the next world at 1230. Restorations follow suit. Return ferry booked for next morning." 
+				]
+			},
+			{ 
+				"date": "2026-05-30", 
+				"text": 
+				[
+					"Breakfast from Sinar Bodhi Jl. Bakar Batu. 3 veges, 1 meat. Serlina has tamie." 
+				]
+			},
+			{ 
+				"date": "2026-05-29", 
+				"text": 
+				[
+					"Ferry to Tanjungpinang in the morning." 
+				]
+			},
+			{ 
+				"date": "2026-05-28", 
+				"text": 
+				[
+					"Explored wmenu versus wofi and how to debloat, whilst still figuring out which is ideal for my Linux setup. Wayland or x11?", 
+					"MaRe not feeling well today, perhaps it was due to fatigue from all the events that happened recently. Serlina was there to bring her to see a doctor in Tanjungpinang." 
+				]
+			},
+			{ 
+				"date": "2026-05-27", 
+				"text": 
+				[
+					"Today I worked on my personal site by cleaning up and adding the diary section you are looking at. 1130 Ferry ticket to Tanjungpinang bought." 
+				]
+			},
+			{ 
+				"date": "2026-05-26", 
+				"text": 
+				[
+					"An important day for mum. Facial spa for her in the morning. For lunch, we had Tonkatsu Ramen. Grandma, Mum and I celebrated with a Strawberry Rose flavoured cake and Din Tai Fung dinner."
+				]
+			},
+			{ 
+				"date": "2026-05-25", 
+				"text": 
+				[
+					"A sudden passing of Serlina's grandpa. A travel from Tanjung Pinang, to Batam and Johor meant a late night arrival. Midnight rendezvous. Cardiac Arrest at 03:30. Frantic calls and pleas for help. Ambulance on site at 04:30. Police at 05:30. Arrangements follow suit. Same day return at 16:00 finalised." 
+				]
+			}
+		]
+	}
+]

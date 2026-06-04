@@ -9,12 +9,12 @@
 		<meta property="og:url" content="https://tristanlee.net/">
 		<meta property="og:type" content="website">
 		<link rel="canonical" href="https://tristanlee.net/">
-		<link rel="stylesheet" href="/assets/css/styles.css">
-		<link rel="icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico">
-		<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
-		<link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+		<link rel="stylesheet" href="/personal/assets/css/styles.css">
+		<link rel="icon" type="image/x-icon" href="/personal/assets/images/favicon/favicon.ico">
+		<link rel="icon" type="image/png" sizes="32x32" href="/personal/assets/images/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/personal/assets/images/favicon/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/personal/assets/images/favicon/apple-touch-icon.png">
+		<link rel="manifest" href="/personal/assets/images/favicon/site.webmanifest">
         <script>
             if (localStorage.getItem('theme') === 'dark')
             {
@@ -72,28 +72,28 @@
                 <ul class="flex flex-wrap gap-4 sm:gap-6 text-base">
                     
                         <li>
-                            <a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/about/">
+                            <a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/personal/about/">
                                 abt/
                             </a>
                         </li>
                     
                     
                         <li>
-                            <a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/interests/">
+                            <a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/personal/interests/">
                                 int/
                             </a>
                         </li>
                     
                     
                         <li>
-                            <a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/projects/">
+                            <a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/personal/projects/">
                                 proj/
                             </a>
                         </li>
                     
                     
                         <li>
-                            <a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/contact/">
+                            <a class="hover:text-gray-500 transition-transform duration-200 hover:-translate-y-[3px] inline-block" href="/personal/contact/">
                                 ctc/
                             </a>
                         </li>
@@ -118,8 +118,8 @@
 	My philosophy is about keeping things simple, minimal and usable. I believe this should become the mainstream philosophy in the IT sector. Unfortunately, the tendency for complex, error-prone and slow software seems to be prevalent in the present-day software industry.
 </p>
 
-<a href="/home/">
-	<img src="/assets/images/sky.jpg" 
+<a href="/personal/home/">
+	<img src="/personal/assets/images/sky.jpg" 
 		 alt="Sky" 
 		 class="home-thumb-full">
 </a>
@@ -131,67 +131,157 @@
 </h2>
 
 <div class="diary-links font-mono flex flex-wrap gap-6 mb-6 text-base">
-    <a class="hover:underline" onclick="openDiary('2026');">
-		2026/
-	</a>
+	
+		<button class="hover:underline" onclick="openDiary('');">
+			2026/
+		</button>
+	
 </div>
 
-<div id="diary-panel" class="hidden">
-    <div class="flex items-center justify-between mb-4">
-        <span id="diary-title" class="font-mono text-base">
-		</span>
-        <a class="font-mono text-base" onclick="closeDiary();">
-			../
-		</a>
-    </div>
-    <div id="diary-body" class="space-y-4 font-mono text-sm">
+
+	<div id="diary-" class="hidden">
+		<div class="justify-between flex mb-4 font-mono text-base">
+			<span>
+				2026/
+			</span>
+			<button class ="hover:text-gray-500 transition-transform duration-200 hover:-translate-y-[3px]" onclick="closeDiary();">
+				../
+			</button>
+		</div>
+		
+			<div class="mb-4 font-mono text-sm">
+				<span class="text-gray-500">2026-06-04</span>
+				
+					<br>
+					<p>
+						Applied for jobs, scoured job listings on Linkedin, feeling a certain lack of interest and motivation to continue pursuing work in Singapore. However, it is still a good and simple day programming, revising Anki flashcards and Duolingo.
+					</p>
+				
+					<br>
+					<p>
+						Major changes I have made to index.html. Cleaned up the page by removing dead code and incorporated JSON for long-term maintainability. It's great!
+					</p>
+				
+			</div>
+		
+			<div class="mb-4 font-mono text-sm">
+				<span class="text-gray-500">2026-06-03</span>
+				
+					<br>
+					<p>
+						Revised Anki flashcard first thing in the morning. I need to build this habit.
+					</p>
+				
+			</div>
+		
+			<div class="mb-4 font-mono text-sm">
+				<span class="text-gray-500">2026-06-02</span>
+				
+					<br>
+					<p>
+						Explored local-hosted open source AI models Ollama. Other than that, not much motivation to do much else.
+					</p>
+				
+			</div>
+		
+			<div class="mb-4 font-mono text-sm">
+				<span class="text-gray-500">2026-06-01</span>
+				
+					<br>
+					<p>
+						ID 0730 Morning ferry back to Singapore. Arrival 1030 local time. Singaporean Uncle Ang from Bukit Panjang accompanies.
+					</p>
+				
+			</div>
+		
+			<div class="mb-4 font-mono text-sm">
+				<span class="text-gray-500">2026-05-31</span>
+				
+					<br>
+					<p>
+						Sent off Serlina's yeye to the next world at 1230. Restorations follow suit. Return ferry booked for next morning.
+					</p>
+				
+			</div>
+		
+			<div class="mb-4 font-mono text-sm">
+				<span class="text-gray-500">2026-05-30</span>
+				
+					<br>
+					<p>
+						Breakfast from Sinar Bodhi Jl. Bakar Batu. 3 veges, 1 meat. Serlina has tamie.
+					</p>
+				
+			</div>
+		
+			<div class="mb-4 font-mono text-sm">
+				<span class="text-gray-500">2026-05-29</span>
+				
+					<br>
+					<p>
+						Ferry to Tanjungpinang in the morning.
+					</p>
+				
+			</div>
+		
+			<div class="mb-4 font-mono text-sm">
+				<span class="text-gray-500">2026-05-28</span>
+				
+					<br>
+					<p>
+						Explored wmenu versus wofi and how to debloat, whilst still figuring out which is ideal for my Linux setup. Wayland or x11?
+					</p>
+				
+					<br>
+					<p>
+						MaRe not feeling well today, perhaps it was due to fatigue from all the events that happened recently. Serlina was there to bring her to see a doctor in Tanjungpinang.
+					</p>
+				
+			</div>
+		
+			<div class="mb-4 font-mono text-sm">
+				<span class="text-gray-500">2026-05-27</span>
+				
+					<br>
+					<p>
+						Today I worked on my personal site by cleaning up and adding the diary section you are looking at. 1130 Ferry ticket to Tanjungpinang bought.
+					</p>
+				
+			</div>
+		
+			<div class="mb-4 font-mono text-sm">
+				<span class="text-gray-500">2026-05-26</span>
+				
+					<br>
+					<p>
+						An important day for mum. Facial spa for her in the morning. For lunch, we had Tonkatsu Ramen. Grandma, Mum and I celebrated with a Strawberry Rose flavoured cake and Din Tai Fung dinner.
+					</p>
+				
+			</div>
+		
+			<div class="mb-4 font-mono text-sm">
+				<span class="text-gray-500">2026-05-25</span>
+				
+					<br>
+					<p>
+						A sudden passing of Serlina's grandpa. A travel from Tanjung Pinang, to Batam and Johor meant a late night arrival. Midnight rendezvous. Cardiac Arrest at 03:30. Frantic calls and pleas for help. Ambulance on site at 04:30. Police at 05:30. Arrangements follow suit. Same day return at 16:00 finalised.
+					</p>
+				
+			</div>
+		
 	</div>
-</div>
+
 
 <script>
-	const diaryData = {
-		'2026': [
-			{ date: '2026-06-04', text: 'Applied for jobs, scoured job listings on Linkedin, feeling a certain lack of interest and motivation to continue pursuing work in Singapore. However, it is still a good and simple day programming, revising Anki flashcards and Duolingo.' },
-			{ date: '2026-06-03', text: 'Revised Anki flashcard first thing in the morning. I need to build this habit.' },
-			{ date: '2026-06-02', text: 'Explored local-hosted open source AI models Ollama. Other than that, not much motivation to do much else.' },
-			{ date: '2026-06-01', text: 'ID 0730 Morning ferry back to Singapore. Arrival 1030 local time. Singaporean Uncle Ang from Bukit Panjang accompanies.' },
-			{ date: '2026-05-31', text: "Sent off Serlina's yeye to the next world at 1230. Restorations follow suit. Return ferry booked for next morning." },
-			{ date: '2026-05-30', text: 'Breakfast from Sinar Bodhi Jl. Bakar Batu. 3 veges, 1 meat. Serlina has tamie.' },
-			{ date: '2026-05-29', text: 'Ferry to Tanjungpinang in the morning.' },
-			{ date: '2026-05-28', text: 'Explored wmenu versus wofi and how to debloat, whilst still figuring out which is ideal for my Linux setup. Wayland or x11? MaRe not feeling well today, perhaps it was due to fatigue from all the events that happened recently. Serlina was there to bring her to see a doctor in Tanjungpinang.' },
-			{ date: '2026-05-27', text: 'Today I worked on my personal site by cleaning up and adding the diary section you are looking at. 1130 Ferry ticket to Tanjungpinang bought.' },
-			{ date: '2026-05-26', text: "An important day for mum. Facial spa for her in the morning. For lunch, we had Tonkatsu Ramen. Grandma, Mum and I celebrated with a Strawberry Rose flavoured cake and Din Tai Fung dinner." },
-			{ date: '2026-05-25', text: "A sudden passing of Serlina's grandpa. A travel from Tanjung Pinang, to Batam and Johor meant a late night arrival. Midnight rendezvous. Cardiac Arrest at 03:30. Frantic calls and pleas for help. Ambulance on site at 04:30. Police at 05:30. Arrangements follow suit. Same day return at 16:00 finalised." },
-		],
-	};
-
 	function openDiary(year)
 	{
-		document.getElementById('diary-title').textContent = year + '/';
-
-		document.getElementById('diary-body').innerHTML = diaryData[year]
-			.map
-			(
-				entry => 
-					`
-						<p class="mb-4">
-							<span class="text-gray-500">
-								${entry.date}
-							</span>
-							<br>
-							${entry.text}
-						</p>
-					`
-			)
-			.join('');
-
+		document.getElementById('diary-' + year).classList.remove('hidden');
 		document.querySelector('.diary-links').classList.add('hidden');
-		document.getElementById('diary-panel').classList.remove('hidden');
 	}
 
 	function closeDiary()
 	{
-		document.getElementById('diary-panel').classList.add('hidden');
+		document.querySelectorAll('[id^="diary-"]').forEach(el => el.classList.add('hidden'));
 		document.querySelector('.diary-links').classList.remove('hidden');
 	}
 </script>
@@ -203,6 +293,6 @@
         <footer class="text-center py-8 text-sm text-gray-500">
 			Copyright &copy; 2026 Tristan Lee
         </footer>
-        <script src="/assets/js/script.js"></script>
+        <script src="/personal/assets/js/script.js"></script>
     </body>
 </html>
