@@ -29,18 +29,18 @@ title: Tristan Lee
 </h2>
 
 <div class="diary-links font-mono flex flex-wrap gap-6 mb-6 text-base">
-    <a class="hover:underline" onclick="openDiary('2026');">
+    <button class="hover:underline" onclick="openDiary('2026');">
 		2026/
-	</a>
+	</button>
 </div>
 
 <div id="diary-panel" class="hidden">
     <div class="flex items-center justify-between mb-4">
         <span id="diary-title" class="font-mono text-base">
 		</span>
-        <a class="font-mono text-base" onclick="closeDiary();">
+        <button class="hover:text-gray-500 transition-transform duration-200 hover:-translate-y-[3px] text-base" onclick="closeDiary();">
 			../
-		</a>
+		</button>
     </div>
     <div id="diary-body" class="space-y-4 font-mono text-sm">
 	</div>
