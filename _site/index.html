@@ -64,7 +64,8 @@
         </style>
         <title>Tristan Lee</title>
     </head>
-    <body class="font-mono bg-[#F5F5F5] dark:bg-black text-black dark:text-white transition-colors duration-200">
+    
+	<body class="font-mono bg-[#F5F5F5] dark:bg-black text-black dark:text-white">
         <nav class="border-b border-black dark:border-white fixed w-full top-0 left-0 z-50 bg-[#F5F5F5] dark:bg-black">
             <div class="container mx-auto px-6 py-4 flex flex-wrap justify-between items-center ">
 				
@@ -111,7 +112,7 @@
 <hr class="border-black dark:border-white mb-6">
 
 <p class="text-base mb-4">
-	Tristan here, welcome to my website.
+Tristan here, welcome to my website.
 </p>
 
 <a class="mb-4" href="/personal/home/">
@@ -124,97 +125,70 @@
 <hr class="border-black dark:border-white mb-6">
 
 <h2 class="text-lg font-bold mb-4">
-	diaries - 日记
+	diaries 日记
 </h2>
-<ul class="space-y-4">
-	<li>
-		<span class="text-sm text-gray-500 dark:text-gray-400">
-			2026-06-04
+
+<div class="diary-links font-mono flex flex-wrap gap-6 mb-6 text-sm">
+    <a href="#2026" class="hover:underline" onclick="openDiary('2026'); return false;">
+		2026/
+	</a>
+    <a href="#2027" class="hover:underline" onclick="openDiary('2027'); return false;">
+		2027/
+	</a>
+</div>
+
+<div id="diary-panel" class="hidden">
+    <div class="flex items-center justify-between mb-4">
+        <span id="diary-title" class="font-mono text-base">
 		</span>
-		<p class="text-base">
-			Applied for jobs. Feeling the lack of interest and motivation to pursue work in Singapore. Howeverso, it is a simple day programming, Duolingo and revising Anki flashcards.
-		</p>
-	</li>
-	<li>
-		<span class="text-sm text-gray-500 dark:text-gray-400">
-			2026-06-03
-		</span>
-		<p class="text-base">
-			Revised Anki flashcard first thing in the morning. I need to build this habit.
-		</p>
-	</li>
-	<li>
-		<span class="text-sm text-gray-500 dark:text-gray-400">
-			2026-06-02
-		</span>
-		<p class="text-base">
-			Explored local-hosted open source AI models Ollama. Other than that, not much motivation to do much else.
-		</p>
-	</li>
-	<li>
-		<span class="text-sm text-gray-500 dark:text-gray-400">
-			2026-06-01
-		</span>
-		<p class="text-base">
-			ID 0730 Morning ferry back to Singapore. Arrival 1030 local time. Singaporean Uncle Ang from Bukit Panjang accompanies.
-		</p>
-	</li>
-	<li>
-		<span class="text-sm text-gray-500 dark:text-gray-400">
-			2026-05-31
-		</span>
-		<p class="text-base">
-			Sent off Serlina's yeye to the next world at 1230. Restorations follow suit. Return ferry booked for next morning.
-		</p>
-	</li>
-	<li>
-		<span class="text-sm text-gray-500 dark:text-gray-400">
-			2026-05-30
-		</span>
-		<p class="text-base">
-			Breakfast from Sinar Bodhi Jl. Bakar Batu. 3 veges, 1 meat. Serlina has tamie.
-		</p>
-	</li>
-	 <li>
-		<span class="text-sm text-gray-500 dark:text-gray-400">
-			2026-05-29
-		</span>
-		<p class="text-base">
-			Ferry to Tanjungpinang in the morning.
-		</p>
-	</li>
-	<li>
-		<span class="text-sm text-gray-500 dark:text-gray-400">
-			2026-05-28
-		</span>
-		<p class="text-base">
-			Explored wmenu versus wofi and how to debloat, whilst still figuring out which is ideal for my Linux setup. Wayland or x11? MaRe not feeling well today, perhaps it was due to fatigue from all the events that happened recently. Serlina was there to bring her to see a doctor in Tanjungpinang.
-		</p>
-	</li>
-	<li>
-		<span class="text-sm text-gray-500 dark:text-gray-400">
-			2026-05-27
-		</span>
-		<p class="text-base">
-			Today I worked on my personal site by cleaning up and adding the diary section you are looking at. 1130 Ferry ticket to Tanjungpinang bought.
-		</p>
-	</li>
-	<li>
-		<span class="text-sm text-gray-500 dark:text-gray-400">
-			2026-05-26
-		</span>
-		<p class="text-base">
-			An important day for mum. Facial spa for her in the morning. For lunch, we had Tonkatsu Ramen. Grandma, Mum and I celebrated with a Strawberry Rose flavoured cake and Din Tai Fung dinner.
-		</p>
-	<li>
-		<span class="text-sm text-gray-500 dark:text-gray-400">
-			2026-05-25
-		</span>
-		<p class="text-base">
-			A sudden passing of Serlina's grandpa. A travel from Tanjung Pinang, to Batam and Johor meant a late night arrival. Midnight rendezvous. Cardiac Arrest at 03:30. Frantic calls and pleas for help. Ambulance on site at 04:30. Police at 05:30. Arrangements follow suit. Same day return at 16:00 finalised.
-		</p>
-	</li>
-</ul>
+        <a class="font-mono text-base" href="/" onclick="closeDiary(); return false;">
+			../
+		</a>
+    </div>
+    <div id="diary-body" class="space-y-4 font-mono text-sm">
+	</div>
+</div>
+
+<script>
+	const diaryData = {
+		'2025' : [
+			{ text: 'Yesterday' }
+		],
+		'2026': [
+			{ date: '2026-06-04', text: 'Applied for jobs. Feeling the lack of interest and motivation to pursue work in Singapore. Howeverso, it is a simple day programming, Duolingo and revising Anki flashcards.' },
+			{ date: '2026-06-03', text: 'Revised Anki flashcard first thing in the morning. I need to build this habit.' },
+			{ date: '2026-06-02', text: 'Explored local-hosted open source AI models Ollama. Other than that, not much motivation to do much else.' },
+			{ date: '2026-06-01', text: 'ID 0730 Morning ferry back to Singapore. Arrival 1030 local time. Singaporean Uncle Ang from Bukit Panjang accompanies.' },
+			{ date: '2026-05-31', text: "Sent off Serlina's yeye to the next world at 1230. Restorations follow suit. Return ferry booked for next morning." },
+			{ date: '2026-05-30', text: 'Breakfast from Sinar Bodhi Jl. Bakar Batu. 3 veges, 1 meat. Serlina has tamie.' },
+			{ date: '2026-05-29', text: 'Ferry to Tanjungpinang in the morning.' },
+			{ date: '2026-05-28', text: 'Explored wmenu versus wofi and how to debloat, whilst still figuring out which is ideal for my Linux setup. Wayland or x11? MaRe not feeling well today, perhaps it was due to fatigue from all the events that happened recently. Serlina was there to bring her to see a doctor in Tanjungpinang.' },
+			{ date: '2026-05-27', text: 'Today I worked on my personal site by cleaning up and adding the diary section you are looking at. 1130 Ferry ticket to Tanjungpinang bought.' },
+			{ date: '2026-05-26', text: "An important day for mum. Facial spa for her in the morning. For lunch, we had Tonkatsu Ramen. Grandma, Mum and I celebrated with a Strawberry Rose flavoured cake and Din Tai Fung dinner." },
+			{ date: '2026-05-25', text: "A sudden passing of Serlina's grandpa. A travel from Tanjung Pinang, to Batam and Johor meant a late night arrival. Midnight rendezvous. Cardiac Arrest at 03:30. Frantic calls and pleas for help. Ambulance on site at 04:30. Police at 05:30. Arrangements follow suit. Same day return at 16:00 finalised." },
+		],
+	};
+
+	function openDiary(year)
+	{
+		const entries = diaryData[year] || [];
+		document.getElementById('diary-title').textContent = year + '/';
+		document.getElementById('diary-body').innerHTML = entries.length === 0
+			? 'no entries yet.'
+			: entries.map(e => `<p class="mb-4"><span class="text-gray-500">${e.date}</span><br>${e.text}</p>`).join('');
+		document.querySelector('.diary-links').classList.add('hidden');
+		document.getElementById('diary-panel').classList.remove('hidden');
+	}
+
+	function closeDiary()
+	{
+		document.getElementById('diary-panel').classList.add('hidden');
+		document.querySelector('.diary-links').classList.remove('hidden');
+	}
+</script>
+
+<hr class="border-black dark:border-white mb-6">
+
 
         </main>
         <footer class="text-center py-8 text-sm text-gray-500">

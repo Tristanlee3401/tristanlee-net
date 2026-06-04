@@ -64,7 +64,8 @@
         </style>
         <title>{{ title }}</title>
     </head>
-    <body class="font-mono bg-[#F5F5F5] dark:bg-black text-black dark:text-white transition-colors duration-200">
+    {% comment %} <body class="font-mono bg-[#F5F5F5] dark:bg-black text-black dark:text-white transition-colors duration-200"> {% endcomment %}
+	<body class="font-mono bg-[#F5F5F5] dark:bg-black text-black dark:text-white">
         <nav class="border-b border-black dark:border-white fixed w-full top-0 left-0 z-50 bg-[#F5F5F5] dark:bg-black">
             <div class="container mx-auto px-6 py-4 flex flex-wrap justify-between items-center ">
 				{% unless page.url == '/' %}
