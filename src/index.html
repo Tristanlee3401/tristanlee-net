@@ -10,14 +10,16 @@ title: Tristan Lee
 <hr class="border-black dark:border-white mb-6">
 
 <p class="text-base mb-4">
-Tristan here, welcome to my website.
+	Tristan here, welcome to my website with a focus on simplicity, clarity and frugality.
+</p>
+<p class="text-base mb-4">
+	My philosophy is about keeping things simple, minimal and usable. I believe this should become the mainstream philosophy in the IT sector. Unfortunately, the tendency for complex, error-prone and slow software seems to be prevalent in the present-day software industry.
 </p>
 
-<a class="mb-4" href="{{ '/home/' | url }}">
+<a href="{{ '/home/' | url }}">
 	<img src="{{ '/assets/images/sky.jpg' | url }}" 
 		 alt="Sky" 
 		 class="home-thumb-full">
-	</img>
 </a>
 
 <hr class="border-black dark:border-white mb-6">
@@ -27,11 +29,8 @@ Tristan here, welcome to my website.
 </h2>
 
 <div class="diary-links font-mono flex flex-wrap gap-6 mb-6 text-base">
-    <a href="#2026" class="hover:underline" onclick="openDiary('2026'); return false;">
+    <a class="hover:underline" onclick="openDiary('2026');">
 		2026/
-	</a>
-    <a href="#2027" class="hover:underline" onclick="openDiary('2027'); return false;">
-		2027/
 	</a>
 </div>
 
@@ -39,7 +38,7 @@ Tristan here, welcome to my website.
     <div class="flex items-center justify-between mb-4">
         <span id="diary-title" class="font-mono text-base">
 		</span>
-        <a class="font-mono text-base" href="/" onclick="closeDiary(); return false;">
+        <a class="font-mono text-base" onclick="closeDiary();">
 			../
 		</a>
     </div>
@@ -49,9 +48,6 @@ Tristan here, welcome to my website.
 
 <script>
 	const diaryData = {
-		'2025' : [
-			{ text: 'Yesterday' }
-		],
 		'2026': [
 			{ date: '2026-06-04', text: 'Applied for jobs, scoured job listings on Linkedin, feeling a certain lack of interest and motivation to continue pursuing work in Singapore. However, it is still a good and simple day programming, revising Anki flashcards and Duolingo.' },
 			{ date: '2026-06-03', text: 'Revised Anki flashcard first thing in the morning. I need to build this habit.' },
@@ -69,11 +65,24 @@ Tristan here, welcome to my website.
 
 	function openDiary(year)
 	{
-		const entries = diaryData[year] || [];
 		document.getElementById('diary-title').textContent = year + '/';
-		document.getElementById('diary-body').innerHTML = entries.length === 0
-			? 'no entries yet.'
-			: entries.map(e => `<p class="mb-4"><span class="text-gray-500">${e.date}</span><br>${e.text}</p>`).join('');
+
+		document.getElementById('diary-body').innerHTML = diaryData[year]
+			.map
+			(
+				entry => 
+					`
+						<p class="mb-4">
+							<span class="text-gray-500">
+								${entry.date}
+							</span>
+							<br>
+							${entry.text}
+						</p>
+					`
+			)
+			.join('');
+
 		document.querySelector('.diary-links').classList.add('hidden');
 		document.getElementById('diary-panel').classList.remove('hidden');
 	}
