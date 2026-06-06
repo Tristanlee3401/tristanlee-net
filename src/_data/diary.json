@@ -4,6 +4,13 @@
 		"entries":
 		[
 			{ 
+				"date": "2026-06-06", 
+				"text": 
+				[
+					"Rewrote wmenu.sh in C, but not sure if I want to use it. Also wrote a few html email templates for professional usage."
+				]
+			},
+			{ 
 				"date": "2026-06-05", 
 				"text": 
 				[
