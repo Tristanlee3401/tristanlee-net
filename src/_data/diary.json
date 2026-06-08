@@ -4,6 +4,14 @@
 		"entries":
 		[
 			{ 
+				"date": "2026-06-08", 
+				"text": 
+				[
+					"These past few days have been particularly brutal. Messing around configuring https for Nextcloud has proven fruitful. Attempts to implement Vaultwarden, Hermes AI agent and a few automations here and there.",
+					"Things break when adding more features. Otherwise, Anki, Duolingo, light cleaning."
+				]
+			},
+			{ 
 				"date": "2026-06-07", 
 				"text": 
 				[
