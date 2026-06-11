@@ -4,6 +4,13 @@
 		"entries":
 		[
 			{ 
+				"date": "2026-06-11", 
+				"text": 
+				[
+					"Fixed private dns subpath issues, cleared disk space, migrated tailscale services for clean subdomains."
+				]
+			},
+			{ 
 				"date": "2026-06-10", 
 				"text": 
 				[
