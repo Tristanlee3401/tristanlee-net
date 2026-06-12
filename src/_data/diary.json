@@ -3,18 +3,13 @@
 		"year": "2026",
 		"entries":
 		[
-			{
-				"date": "2026-06-12",
-				"text":
-				[
-					"a"
-				]
-			},
 			{ 
 				"date": "2026-06-12", 
 				"text": 
 				[
 					"Refactored scripts. UNIX philosophy."
+				,
+					"test entry"
 				]
 			},
 			{ 
