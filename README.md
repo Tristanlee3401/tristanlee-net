@@ -9,7 +9,6 @@ src/
 │   ├── css
 │   │   ├── layout.css
 │   │   ├── nostalgic-input.css
-│   │   ├── styles.css
 │   │   └── tailwind-input.css
 │   ├── images
 │   │   ├── exit.png
