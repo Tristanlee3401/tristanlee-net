@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts":
   {
-	"tailwind": "npx @tailwindcss/cli -i ./src/assets/css/input.css -o ./src/assets/css/styles.css",
-	"start": "npx @tailwindcss/cli -i ./src/assets/css/input.css -o ./src/assets/css/styles.css --watch & eleventy --serve",
-	"build": "npx @tailwindcss/cli -i ./src/assets/css/input.css -o ./src/assets/css/styles.css && eleventy",
-	"sync": "npx @tailwindcss/cli -i ./src/assets/css/input.css -o ./src/assets/css/styles.css && eleventy --pathprefix=/personal/ && rsync -avh --delete _site/ /var/www/html/personal/"
+	"start": "npx @tailwindcss/cli -i ./src/assets/css/tailwind-input.css -o ./src/assets/css/styles.css --watch & eleventy --serve",
+	"build": "npx @tailwindcss/cli -i ./src/assets/css/tailwind-input.css -o ./src/assets/css/styles.css && eleventy",
+	"sync": "npx @tailwindcss/cli -i ./src/assets/css/tailwind-input.css -o ./src/assets/css/styles.css && eleventy --pathprefix=/personal/ && rsync -avh --delete _site/ /var/www/html/personal/"
   },
   "keywords": [],
   "author": "Tristan Lee",

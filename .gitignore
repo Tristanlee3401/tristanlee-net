@@ -1,5 +1,3 @@
 _site/
 node_modules/
-_site/
-src/assets/css/bootstrap-styles.css
 src/assets/css/styles.css
