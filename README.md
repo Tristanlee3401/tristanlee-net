@@ -7,10 +7,10 @@ src/
 ├── about.html
 ├── assets
 │   ├── css
-│   │   ├── bootstrap-styles.css
-│   │   ├── input.css
-│   │   ├── native-styles.css
-│   │   └── styles.css
+│   │   ├── layout.css
+│   │   ├── nostalgic-input.css
+│   │   ├── styles.css
+│   │   └── tailwind-input.css
 │   ├── images
 │   │   ├── exit.png
 │   │   ├── favicon
@@ -30,15 +30,16 @@ src/
 ├── CNAME
 ├── contact.html
 ├── _data
+│   ├── diary.json
 │   └── year.js
-├── home.html
 ├── _includes
-│   ├── native.liquid
+│   ├── nostalgic.liquid
 │   └── tailwind.liquid
 ├── index.html
 ├── interests.html
+├── nostalgic.html
 ├── projects.html
 └── robots.txt
 
-8 directories, 29 files
+8 directories, 30 files
 </pre>
