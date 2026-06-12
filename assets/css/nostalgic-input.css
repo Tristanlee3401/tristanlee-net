@@ -1,0 +1,173 @@
+/* ============================================================
+   Nostalgic Background
+   ============================================================ */
+.nostalgic
+{
+    background-image: url('../images/sky.jpg');
+}
+
+/* ============================================================
+   Navigation
+   ============================================================ */
+.navicons
+{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding-bottom: 8px;
+    border-bottom: #00303B 3px dotted;
+    user-select: none;
+}
+
+.icons a
+{
+    text-decoration: none;
+    color: #000000;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	text-align: center;
+}
+
+.icons img
+{
+    width: 50px;
+    height: 50px;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
+
+/* ============================================================
+   Window text
+   ============================================================ */
+header
+{
+	box-sizing: border-box;
+    padding: 12px;
+    text-align: center;
+	width: 100%;
+}
+
+header h1, .error
+{
+    color: #000000;
+	font-family: monospace;
+    font-size: clamp(36px, 10vw, 100px);
+    margin-top: 10px;
+	word-wrap: break-word;
+}
+
+/* ============================================================
+   Window
+   ============================================================ */
+.overlay 
+{
+	background: #57575769;
+	display: none;
+	position: fixed;
+	top: 0; left: 0;
+	width: 100%; height: 100%;
+	z-index: 99;
+}
+
+.window 
+{
+	background: #C5C5C5;
+	border-top: 3px solid #FEFEFE;
+	border-right: 3px solid #4D4D4D;
+	border-bottom: 3px solid #3F3F3F;
+	border-left: 3px solid #E5E5E5;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	height: 320px;
+    width: 90%;
+    max-width: 500px;
+	position: absolute;
+	top: 50%; 
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.windowheader
+{
+	background: linear-gradient(to right, #010080, #020080);
+	height: 24px;
+	display: flex;
+	align-items: center;
+	padding: 2px 5px;
+	flex-shrink: 0;
+}
+
+.window-content {
+    flex: 1; 
+	font-family: monospace;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.windowheader p
+{
+	flex: 1;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 10px;
+	font-family: 'Trebuchet Ms', sans-serif;
+	margin: 0;
+}
+
+.windowheader button
+{
+	width: 18px; height: 18px;
+	font-size: 8px;
+	border-top: 2px solid #FEFEFE;
+	border-right: 2px solid #4D4D4D;
+	border-bottom: 2px solid #3F3F3F;
+	border-left: 2px solid #E5E5E5;
+	background-color: #FF0000;
+	padding: 0;
+	cursor: default;
+}
+
+.windowheader button:active
+{
+	border-top: 2px solid #3F3F3F;
+	border-right: 2px solid #FEFEFE;
+	border-bottom: 2px solid #FEFEFE;
+	border-left: 2px solid #4D4D4D;
+}
+
+.windowsearchbar
+{
+	position: relative;
+	margin: auto;
+	flex: 1;
+    border: 2px solid #FEFEFE;
+    background: #FFFFFF;
+    height: 25px;
+    font-family: monospace;
+    font-size: 12px;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.browser-address-row
+{
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.browser-label
+{
+	font-family: monospace;
+	font-size: 12px;
+}
+

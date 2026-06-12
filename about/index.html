@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+		<meta name="description" content="student, programmer, pianist.">
+		<meta name="robots" content="max-snippet:-1">
+		<meta property="og:title" content="About">
+		<meta property="og:description" content="student, programmer, pianist.">
+		<meta property="og:url" content="https://tristanlee.net/about/">
+		<meta property="og:type" content="website">
+		<link rel="canonical" href="https://tristanlee.net/about/">
+		<link rel="stylesheet" href="/assets/css/styles.css">
+		<link rel="stylesheet" href="/assets/css/layout.css">
+		<link rel="icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+		<link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+        <script>
+            if (localStorage.getItem('theme') === 'dark')
+            {
+                document.documentElement.classList.add('dark');
+            }
+        </script>
+        <title>About</title>
+    </head>
+	<body class="font-mono bg-[#F5F5F5] dark:bg-black text-black dark:text-white">
+        <nav class="border-b border-black dark:border-white fixed w-full top-0 left-0 z-50 bg-[#F5F5F5] dark:bg-black">
+            <div class="container mx-auto px-6 py-4 flex flex-wrap justify-between items-center ">
+				
+                <a class="text-xl font-bold hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/">
+                    /home/
+                </a>
+				
+                <ul class="flex flex-wrap gap-4 sm:gap-6 text-base">
+                    
+                    
+                        <li>
+                            <a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/interests/">
+                                int/
+                            </a>
+                        </li>
+                    
+                    
+                        <li>
+                            <a class="hover:text-gray-500 transition duration-200 hover:-translate-y-[3px] inline-block" href="/projects/">
+                                proj/
+                            </a>
+                        </li>
+                    
+                    
+                        <li>
+                            <a class="hover:text-gray-500 transition-transform duration-200 hover:-translate-y-[3px] inline-block" href="/contact/">
+                                ctc/
+                            </a>
+                        </li>
+                    
+                </ul>
+                <button id="themeToggle" class="border border-black dark:border-white px-3 py-1 text-sm hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition" onclick="toggleTheme()">
+                </button>
+            </div>
+        </nav>
+        <main class="container mx-auto px-6 pb-10">
+            <h1 class="text-3xl font-bold mb-4">
+	about me
+</h1>
+<hr class="border-black dark:border-white mb-6">
+<div class="flex flex-col sm:flex-row gap-6 items-start">
+    <img src="/assets/images/profile.png"
+         alt="Profile Picture"
+         class="w-36 h-36 object-cover border border-black dark:border-white shrink-0">
+    <div>
+        <p class="text-base mb-4">
+            I'm passionate about exploring and learning across a wide range of interests — from Bitcoin (₿) defi, motorcycles, and music - to free and open source software development and world travel.
+        </p>
+        <p class="text-base mb-4">
+            Currently, I'm pursuing a Master of Computer Science at Monash University, diving deeper into the world of technology and its possibilities.
+        </p>
+    </div>
+</div>
+<div class="mt-6">
+    <h2 class="text-lg font-bold mb-4">
+		education
+	</h2>
+    <ul class="list-disc list-inside space-y-2 mb-2 text-base">
+        <li>
+			Master of Computer Science — Monash University (in progress)
+		</li>
+        <li>
+			Bachelor of Accounting — La Trobe University
+		</li>
+        <li>
+			Higher National Diploma in Electrical Engineering — Coventry University
+		</li>
+        <li>
+			Diploma in Electrical and Electronics Engineering — PSB Academy Singapore
+		</li>
+    </ul>
+</div>
+
+        </main>
+        <footer class="text-center py-8 text-sm text-gray-500">
+			Copyright &copy; 2026 Tristan Lee
+        </footer>
+        <script src="/assets/js/script.js"></script>
+    </body>
+</html>
