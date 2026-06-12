@@ -32,8 +32,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Eleventy
-        run: npx @11ty/eleventy
+      - name: Build
+        run: npx run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
