@@ -1,0 +1,45 @@
+---
+layout: tailwind.liquid
+title: Tristan Lee
+---
+<div data-nosnippet>
+	<header>
+		<h1 class="text-3xl font-bold mb-4 block">
+			<span id ="text">hello, world</span><span class="caret"></span>
+		</h1>
+	</header>
+
+	<hr class="border-black dark:border-white mb-6">
+
+	<p class="text-base mb-4">
+	Tristan here, welcome to my website with a focus on simplicity, clarity and frugality.
+	</p>
+	<p class="text-base mb-4">
+	My philosophy is about keeping things simple, minimal and usable. I believe this should become the mainstream philosophy in the IT sector. Unfortunately, the tendency for complex, error-prone and slow software seems to be prevalent in the present-day software industry.
+	</p>
+
+	<a href="{{ '/nostalgic/' | url }}">
+		<img src="{{ '/assets/images/sky.jpg' | url }}" 
+			 alt="Sky" 
+			 class="home-thumb-full">
+	</a>
+
+	<hr class="border-black dark:border-white mb-6">
+
+	<div class="flex items-baseline gap-4 mb-4">
+		<h2 class="text-lg font-bold">
+			diaries 日记
+		</h2>
+		<a href="/feed.xml" class="font-mono text-sm text-black dark:text-white hover:underline">RSS ↗</a>
+	</div>
+
+	<div class="font-mono text-base mb-6 flex flex-wrap flex-row" style="column-gap: 2rem; row-gap: 1rem;">
+		{% assign years = collections.diary | group_by_exp: "e", "e.date | date: '%Y'" %}
+		{% for group in years %}
+			<a href="/diary/#{{ group.name }}" class="hover:underline hover:-translate-y-[2px] transition-transform duration-200 inline-block"> 
+				{{ group.name }}/
+			</a>
+		{% endfor %}
+	</div>
+	<hr class="border-black dark:border-white mb-6">
+</div>

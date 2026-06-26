@@ -1,0 +1,6 @@
+_site/
+node_modules/
+.DS_Store
+.envrc
+src/assets/css/styles.css
+

@@ -1,0 +1,34 @@
+---
+layout: tailwind.liquid
+title: diaries 日记
+permalink: /diary/
+eleventyExcludeFromCollections: true
+---
+<div data-nosnippet>
+	<header class="flex items-baseline gap-4 mb-4">
+		<h1 class="text-3xl font-bold block">
+			diaries 日记
+		</h1>
+		<a href="/feed.xml" class="font-mono text-sm text-black dark:text-white hover:underline">RSS ↗</a>
+	</header>
+
+	<hr class="border-black dark:border-white mb-6">
+
+	{% assign years = collections.diary | group_by_exp: "e", "e.date | date: '%Y'" %}
+	{% for group in years %}
+	<h2 class="text-lg font-bold mb-4" id="{{ group.name }}">{{ group.name }}/</h2>
+	<div class="font-mono text-base mb-6 flex flex-col gap-3">
+		{% for entry in group.items %}
+		<div class="flex gap-4">
+			<span class="text-black dark:text-white shrink-0">{{ entry.date | date: "%Y-%m-%d" }}</span>
+			<a class="hover:underline hover:-translate-y-[2px] transition-transform duration-200 inline-block"
+			   href="{{ entry.url }}">
+				{{ entry.templateContent | strip_html | truncate: 80 }}
+			</a>
+		</div>
+		{% endfor %}
+	</div>
+	{% endfor %}
+
+	<hr class="border-black dark:border-white mb-6">
+</div>

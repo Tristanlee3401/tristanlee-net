@@ -1,0 +1,79 @@
+---
+layout: tailwind.liquid
+---
+<div data-nosnippet>
+	<div class="text-sm text-black dark:text-white mb-4 font-mono flex gap-4">
+		<a href="/diary/" class="hover:underline">
+			../diary/
+		</a>
+		<span>{{ page.date | date: "%Y-%m-%d" }}</span>
+	</div>
+
+	<hr class="border-black dark:border-white mb-6">
+
+	<article class="font-mono text-base text-black dark:text-white leading-relaxed prose prose-sm dark:prose-invert max-w-none">
+		{{ content }}
+	</article>
+
+	<hr class="border-black dark:border-white mb-4">
+
+	<nav class="font-mono text-sm flex justify-between">
+		{% assign all = collections.diary %}
+		{% for e in all %}
+			{% if e.url == page.url %}
+				{% assign currentIndex = forloop.index0 %}
+			{% endif %}
+		{% endfor %}
+
+		{% assign prevIndex = currentIndex | minus: 1 %}
+		{% assign nextIndex = currentIndex | plus: 1 %}
+
+		{% if nextIndex < all.size %}
+			{% assign nextEntry = all[nextIndex] %}
+			<a href="{{ nextEntry.url }}" class="hover:underline text-black dark:text-white">
+				← {{ nextEntry.date | date: "%Y-%m-%d" }}
+			</a>
+		{% else %}
+			<span></span>
+		{% endif %}
+
+		{% if prevIndex >= 0 %}
+			{% assign prevEntry = all[prevIndex] %}
+			<a href="{{ prevEntry.url }}" class="hover:underline text-black dark:text-white">
+				 {{ prevEntry.date | date: "%Y-%m-%d" }} →
+			</a>
+		{% else %}
+			<span></span>
+		{% endif %}
+	</nav>
+	{% assign currentDate = page.date | date: "%Y-%m-%d" %}
+		{% assign links = diaryLinks[currentDate] %}
+		{% if links %}
+			<div class="mt-6 flex flex-col">
+				<span style="text-decoration:underline">related</span>
+				{% for r in links.related %}
+					{% assign rUrl = "/diary/" | append: r | append: "/" %}
+					{% assign rEntry = collections.diary | where: "url", rUrl | first %}
+					<div class="flex gap-4">
+						<span class="shrink-0 mb-4">{{ r }}</span>
+						<a class="hover:underline hover:-translate-y-[2px] transition-transform duration-200 inline-block" href="{{ rUrl }}">
+							{{ rEntry.templateContent | strip_html | truncate: 80 }}
+						</a>
+					</div>
+				{% endfor %}
+			</div>
+
+			<div class="flex flex-col">
+				<span style="text-decoration:underline">unrelated</span>
+				{% assign uUrl = "/diary/" | append: links.unrelated | append: "/" %}
+				{% assign uEntry = collections.diary | where: "url", uUrl | first %}
+				<div class="flex gap-4">
+					<span class="shrink-0">{{ links.unrelated }}</span>
+					<a class="hover:underline hover:-translate-y-[2px] transition-transform duration-200 inline-block" href="{{ uUrl }}">
+						{{ uEntry.templateContent | strip_html | truncate: 80 }}
+					</a>
+				</div>
+			</div>
+		</div>
+	{% endif %}
+</div>

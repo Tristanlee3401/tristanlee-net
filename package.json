@@ -1,0 +1,24 @@
+{
+  "name": "tristanlee-net",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts":
+  {
+	"start": "npx @tailwindcss/cli -i ./src/assets/css/tailwind-input.css -o ./src/assets/css/styles.css --watch & eleventy --serve",
+	"build": "npx @tailwindcss/cli -i ./src/assets/css/tailwind-input.css -o ./src/assets/css/styles.css && eleventy",
+	"sync": "npx @tailwindcss/cli -i ./src/assets/css/tailwind-input.css -o ./src/assets/css/styles.css && eleventy && rsync -avh --delete _site/ /var/www/html/"
+  },
+  "keywords": [],
+  "author": "Tristan Lee",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.5",
+    "@tailwindcss/typography": "^0.5.16"
+  },
+  "dependencies": {
+    "@11ty/eleventy-plugin-rss": "^3.0.0",
+    "@tailwindcss/cli": "^4.3.0",
+    "tailwindcss": "^4.3.0"
+  }
+}

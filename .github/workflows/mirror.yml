@@ -1,0 +1,24 @@
+name: Mirror to Codeberg
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Push to Codeberg
+        env:
+          CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}
+        run: |
+          # Use your Codeberg username (tristanlee) and the token secret
+          git push --force https://tristanlee:${CODEBERG_TOKEN}@codeberg.org/tristanlee/tristanlee-net.git main:main
+
+
