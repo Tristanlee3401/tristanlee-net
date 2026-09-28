@@ -21,7 +21,7 @@ eleventyExcludeFromCollections: true
 		{% for entry in group.items %}
 		<div class="flex gap-4">
 			<span class="text-black dark:text-white shrink-0">{{ entry.date | date: "%Y-%m-%d" }}</span>
-			<a class="hover:underline hover:-translate-y-[2px] transition-transform duration-200 inline-block"
+			<a class="hover:underline hover:translate-y-[0.5] transition-transform duration-200 inline-block"
 			   href="{{ entry.url }}">
 				{{ entry.templateContent | strip_html | truncate: 80 }}
 			</a>

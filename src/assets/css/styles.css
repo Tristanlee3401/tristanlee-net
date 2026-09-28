@@ -1056,6 +1056,14 @@
       }
     }
   }
+  .hover\:translate-y-\[0\.5\] {
+    &:hover {
+      @media (hover: hover) {
+        --tw-translate-y: 0.5;
+        translate: var(--tw-translate-x) var(--tw-translate-y);
+      }
+    }
+  }
   .hover\:bg-black {
     &:hover {
       @media (hover: hover) {
