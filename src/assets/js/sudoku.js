@@ -122,6 +122,10 @@ function check() {
         render();
 }
 
+function render() {
+        cells.forEach(drawCell);
+}
+
 function onBoardClick(event) {
 
 }
