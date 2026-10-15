@@ -122,6 +122,10 @@ function check() {
         render();
 }
 
+function setStatus(text) {
+        statusElement.textContent = text;
+}
+
 function render() {
         cells.forEach(drawCell);
 }
