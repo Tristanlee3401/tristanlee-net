@@ -114,6 +114,14 @@ function enter(digit) {
         render();
 }
 
+function check() {
+        if (!state.current.length)
+                return;
+        state.checked = true;
+        setStatus(checkMessage());
+        render();
+}
+
 function onBoardClick(event) {
 
 }
