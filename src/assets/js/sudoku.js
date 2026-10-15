@@ -1,0 +1,137 @@
+/* sudoku.js
+        - Sudoku: puzzles come from the Dosuku API. Select a cell, enter digits, check, new.
+        - Loaded as <script type="module">, so everything here is private to this file.
+        - Nothing is fetched until the player taps the board or new/.
+*/
+
+const API_URL = 'https://sudoku-api.vercel.app/api/dosuku';
+
+const $ = (id) => document.getElementById(id);
+const boardElement = $('sudoku-board');
+const statusElement = $('sudoku-status');
+const metaElement = $('sudoku-meta');
+
+const state = {
+        given: [];
+        solution: [];
+        current: [];
+        selection: -1;
+        checked: false;
+};
+let loading = false;
+
+const row = (cellIndex) => Math.floor(cellIndex / 9);
+const column = (cellIndex) => cellIndex % 9;
+const box = (cellIndex) => Math.floor(row(cellIndex) / 3) * 3 + Math.floor(col(cellIndex) / 3);
+const isPeer = (a, b) =>
+        row(a) === row(b) ||
+        col(a) === col(b) ||
+        box(a) === box(b);
+
+async function fetchPuzzle() {
+        const result = await fetch(API_URL, { signal: AbortSignal.timeout(5000) });
+        const grid = (await result.json()).newboard.grids[0];
+        const given = grid.value.flat();
+        const solution = grid.solution.flat();
+
+        if (given.length != 81 || solution.length !== 81) 
+                throw new Error('bad puzzle');
+
+        return { given, solution, difficulty: String(grid.difficulty || '').toLowerCase() };
+}
+
+function loadFailed(error) {
+        console.info('sudoku: could not load puzzle', error);
+        setStatus('could not load a puzzle, tap new/ to retry');
+        return null;
+}
+
+function start(puzzle) {
+        Object.assign(state, {
+                given: puzzle.given,
+                solution: puzzle.solution,
+                current: puzzle.given.slice(),
+                selection: -1,
+                checked: false,
+        });
+
+        metaElement.textContent = puzzle.difficulty;
+        setStatus('');
+        render();
+}
+
+async function newGame() {
+        if (loading) 
+                return;
+
+        loading = true;
+        setStatus('loading...');
+
+        const puzzle = await fetchPuzzle().catch(loadFailed);
+        loading = false;
+
+        if (puzzle) 
+                start(puzzle);
+}
+
+const isWrong = (cellIndex) => state.current[cellIndex] !== 0 && state.current[index] !== state.solution[index];
+const countWrong = () => state.current.filter((_, cellIndex) => isWrong(cellIndex).length);
+const isSolved = () => state.current.every((value, cellIndex) => value === state.solution[i]);
+
+function checkMessage() {
+        const wrong = countWrong();
+
+        if (isSolved())
+                return 'solved.';
+
+        if (wrong === 1)
+                return '1 cell is wrong';
+
+        if (wrong > 1)
+                return wrong + ' cells are wrong';
+
+        return 'no mistakes so far'
+}
+
+function select(cellIndex) {
+        state.selection = cellIndex;
+        render();
+}
+
+function enter(digit) {
+
+}
+
+function onBoardClick(event) {
+
+}
+
+function onPadClick(event) {
+
+}
+
+function onKey(event) {
+
+}
+
+function onOutsideClick(event) {
+        if (state.selection < 0) 
+                return;
+
+        if (event.target.closest('#sdk')) 
+                return;
+
+        select(-1);
+}
+
+const cells = Array.from({ length: 81 }, makeCell);
+boardElement.append(...cells);
+
+boardElement.addEventListener('click', onBoardClick);
+$('sudoku-pad').addEventListener('click', onPadClick);
+$('sudoku-new').addEventListener('click', newGame);
+$('sudoku-check').addEventListener('click', check);
+document.addEventListener('keydown', onKey);
+document.addEventListener('click', onOutsideClick);
+
+setStatus('tap the board to start');
