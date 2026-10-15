@@ -99,7 +99,19 @@ function select(cellIndex) {
 }
 
 function enter(digit) {
+        if (!state.current.length)
+                return;
 
+        if (state.selection < 0)
+                return setStatus('select a cell first');
+
+        if (state.given[state.selection] != 0)
+                return;
+
+        state.current[state.selection] = digit;
+        state.checked = false;
+        setStatus(isSolved() ? 'solved.' : '');
+        render();
 }
 
 function onBoardClick(event) {
