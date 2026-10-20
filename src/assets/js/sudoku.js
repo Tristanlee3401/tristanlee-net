@@ -138,7 +138,12 @@ function makeCell(_, i) {
 }
 
 function onBoardClick(event) {
-
+        const cell = event.target.closest('.sudoku-cell');
+        if (!cell) 
+                return;
+        if (!state.current.length) 
+                return newGame();
+        select(Number(cell.dataset.i));
 }
 
 function onPadClick(event) {
