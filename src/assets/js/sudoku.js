@@ -199,7 +199,7 @@ function onOutsideClick(event) {
         if (state.selection < 0) 
                 return;
 
-        if (event.target.closest('#sdk')) 
+        if (event.target.closest('#sudoku')) 
                 return;
 
         select(-1);
