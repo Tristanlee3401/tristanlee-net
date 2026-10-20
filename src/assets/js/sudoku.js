@@ -188,7 +188,7 @@ function onKey(event) {
         if (state.selection < 0 || element.ctrlKey || element.metaKey || element.altKey) 
                 return;
 
-        if (/^[1-9]$/.test(e.key)) 
+        if (/^[1-9]$/.test(element.key)) 
                 return enter(Number(element.key));
 
         if (element.key === '0' || element.key === 'Backspace' || element.key === 'Delete') 
