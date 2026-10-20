@@ -141,23 +141,28 @@
         }
 
         .sudoku-button:active {
-
+                background: var(--sudoku-foreground);
+                color: var(--sudoku-background);
         }
 
         @media (hover: hover) {
-
+                .sudoku-button:hover {
+                        background: var(--sudoku-foreground);
+                        color: var(--sudoku-background);
+                }
         }
 
         .sudoku-link {
-
+                padding: 0.5rem 0; 
+                cursor: pointer; 
+                touch-action: manipulation;
         }
 
         .sudoku-status {
-
+                min-height: 1.25rem;
         }
 
-        .sudoku-cell:focus-visible;
-
+        .sudoku-cell:focus-visible,
         .sudoku-button:focus-visible {
                 outline: 2px solid var(--sudoku-foreground);
                 outline-offset: -4px;
