@@ -75,7 +75,7 @@ async function newGame() {
 }
 
 const isWrong = (cellIndex) => state.current[cellIndex] !== 0 && state.current[cellIndex] !== state.solution[cellIndex];
-const countWrong = () => state.current.filter((_, cellIndex) => isWrong(cellIndex).length);
+const countWrong = () => state.current.filter((_, cellIndex) => isWrong(cellIndex)).length;
 const isSolved = () => state.current.every((value, cellIndex) => value === state.solution[cellIndex]);
 
 function checkMessage() {
