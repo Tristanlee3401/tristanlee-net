@@ -146,7 +146,7 @@ function cellClass(index) {
 
 function drawCell(element, index) {
         const value = state.current[index];
-        element.className = cellClass[index];
+        element.className = cellClass(index);
         element.textContent = value || '';
         element.setAttribute('aria-label', `row ${row(index) + 1} column ${column(index) + 1}, ${value || 'empty'}`);
 }
