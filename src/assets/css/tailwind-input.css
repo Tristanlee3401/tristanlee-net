@@ -81,5 +81,85 @@
                 -webkit-tap-highlight-color: transparent;
         }
 
+        .sudoku-cell:nth-child(9n) {
+                border-right: 0;
+        }
 
+        .sudoku-cell:nth-child(n + 73) {
+                border-bottom: 0;
+        }
+
+        .sudoku-cell:nth-child(9n + 3),
+
+        .sudoku-cell:nth-child(9n + 6) {
+                border-right: 2px solid var(--sudoku-foreground);
+        }
+
+        .sudoku-cell:nth-child(n + 19):nth-child(-n + 27),
+
+        .sudoku-cell:nth-child(n + 46):nth-child(-n + 54) {
+                border-bottom: 2px solid var(--sudoku-foreground);
+        }
+
+        .sudoku-given {
+                font-weight: 700;
+        }
+
+        .sudoku-peer {
+                background: color-mix(in srgb, var(--sudoku-foreground) 8%, transparent);
+        }
+
+        .sudoku-selection {
+                background: var(--sudoku-foreground);
+                color: var(--sudoku-background);
+        }
+        
+        .sudoku-wrong {
+                text-decoration: underline;
+                text-decoration-thickness: 2px;
+                text-underline-offset: 0.2em;
+        }
+
+        .sudoku-pad {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 0.5rem;
+                width: min(100%, 28rem);
+        }
+
+        .sudoku-button {
+                height: 3rem;
+                font: inherit;
+                font-size: 1.125rem;
+                color: inherit;
+                background: transparent;
+                border: 1px solid var(--sudoku-foreground);
+                border-radius: 0;
+                cursor: pointer;
+                touch-action: manipulation;
+                -webkit-tap-highlight-color: transparent;
+        }
+
+        .sudoku-button:active {
+
+        }
+
+        @media (hover: hover) {
+
+        }
+
+        .sudoku-link {
+
+        }
+
+        .sudoku-status {
+
+        }
+
+        .sudoku-cell:focus-visible;
+
+        .sudoku-button:focus-visible {
+                outline: 2px solid var(--sudoku-foreground);
+                outline-offset: -4px;
+        }
 }
