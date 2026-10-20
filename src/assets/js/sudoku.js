@@ -165,22 +165,34 @@ function makeCell(_, index) {
 
 function onBoardClick(event) {
         const cell = event.target.closest('.sudoku-cell');
+
         if (!cell) 
                 return;
+
         if (!state.current.length) 
                 return newGame();
+
         select(Number(cell.dataset.index));
 }
 
 function onPadClick(event) {
         const button = element.target.closest('[data-n]');
+
         if (!button) 
                 return;
+
         enter(Number(button.dataset.digit));
 }
 
 function onKey(event) {
+        if (state.selection < 0 || element.ctrlKey || element.metaKey || element.altKey) 
+                return;
 
+        if (/^[1-9]$/.test(e.key)) 
+                return enter(Number(element.key));
+
+        if (element.key === '0' || element.key === 'Backspace' || element.key === 'Delete') 
+                return enter(0);
 }
 
 function onOutsideClick(event) {
