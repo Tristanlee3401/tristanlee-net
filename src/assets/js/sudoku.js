@@ -130,6 +130,13 @@ function render() {
         cells.forEach(drawCell);
 }
 
+function makeCell(_, i) {
+        const element = document.createElement('button');
+        element.type = 'button';
+        element.className = 'sudoku-cell';
+        return element;
+}
+
 function onBoardClick(event) {
 
 }
