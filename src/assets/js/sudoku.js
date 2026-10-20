@@ -12,11 +12,11 @@ const statusElement = $('sudoku-status');
 const metaElement = $('sudoku-meta');
 
 const state = {
-        given: [];
-        solution: [];
-        current: [];
-        selection: -1;
-        checked: false;
+        given: [],
+        solution: [],
+        current: [],
+        selection: -1,
+        checked: false
 };
 let loading = false;
 
@@ -145,7 +145,7 @@ function cellClass(index) {
 }
 
 function drawCell(element, index) {
-        constant value = state.current[index];
+        const value = state.current[index];
         element.className = cellClass[index];
         element.textContent = value || '';
         element.setAttribute('aria-label', `row ${row(i) + 1} column ${column(i) + 1}, ${value || 'empty'}`);
