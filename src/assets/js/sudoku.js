@@ -144,6 +144,13 @@ function cellClass(index) {
         return cells.join(' ');
 }
 
+function drawCell(element, index) {
+        constant value = state.current[index];
+        element.className = cellClass[index];
+        element.textContent = value || '';
+        element.setAttribute('aria-label', `row ${row(i) + 1} column ${column(i) + 1}, ${value || 'empty'}`);
+}
+
 function render() {
         cells.forEach(drawCell);
 }
@@ -166,7 +173,10 @@ function onBoardClick(event) {
 }
 
 function onPadClick(event) {
-
+        const button = element.target.closest('[data-n]');
+        if (!button) 
+                return;
+        enter(Number(button.dataset.digit));
 }
 
 function onKey(event) {
