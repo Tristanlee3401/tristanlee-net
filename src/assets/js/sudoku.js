@@ -22,10 +22,10 @@ let loading = false;
 
 const row = (cellIndex) => Math.floor(cellIndex / 9);
 const column = (cellIndex) => cellIndex % 9;
-const box = (cellIndex) => Math.floor(row(cellIndex) / 3) * 3 + Math.floor(col(cellIndex) / 3);
+const box = (cellIndex) => Math.floor(row(cellIndex) / 3) * 3 + Math.floor(column(cellIndex) / 3);
 const isPeer = (a, b) =>
         row(a) === row(b) ||
-        col(a) === col(b) ||
+        column(a) === column(b) ||
         box(a) === box(b);
 
 async function fetchPuzzle() {
@@ -74,7 +74,7 @@ async function newGame() {
                 start(puzzle);
 }
 
-const isWrong = (cellIndex) => state.current[cellIndex] !== 0 && state.current[index] !== state.solution[index];
+const isWrong = (cellIndex) => state.current[cellIndex] !== 0 && state.current[cellIndex] !== state.solution[cellIndex];
 const countWrong = () => state.current.filter((_, cellIndex) => isWrong(cellIndex).length);
 const isSolved = () => state.current.every((value, cellIndex) => value === state.solution[i]);
 
