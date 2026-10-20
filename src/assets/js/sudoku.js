@@ -126,14 +126,33 @@ function setStatus(text) {
         statusElement.textContent = text;
 }
 
+function cellClass(index) {
+        const cells = ['sudoku-cell'];
+
+        if (state.given[index] > 0) 
+                cells.push('sudoku-given');
+
+        if (index === state.selection) 
+                cells.push('sudoku-selection');
+
+        if (index !== state.selection && state.selection >= 0 && isPeer(index, state.selection)) 
+                cells.push('sudoku-peer');
+
+        if (state.checked && isWrong(index)) 
+                cells.push('sudoku-wrong');
+
+        return cells.join(' ');
+}
+
 function render() {
         cells.forEach(drawCell);
 }
 
-function makeCell(_, i) {
+function makeCell(_, index) {
         const element = document.createElement('button');
         element.type = 'button';
         element.className = 'sudoku-cell';
+        element.dataset.index = index;
         return element;
 }
 
@@ -143,7 +162,7 @@ function onBoardClick(event) {
                 return;
         if (!state.current.length) 
                 return newGame();
-        select(Number(cell.dataset.i));
+        select(Number(cell.dataset.index));
 }
 
 function onPadClick(event) {
