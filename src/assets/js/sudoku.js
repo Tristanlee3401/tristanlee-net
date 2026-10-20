@@ -185,13 +185,13 @@ function onPadClick(event) {
 }
 
 function onKey(event) {
-        if (state.selection < 0 || element.ctrlKey || element.metaKey || element.altKey) 
+        if (state.selection < 0 || event.ctrlKey || event.metaKey || event.altKey) 
                 return;
 
-        if (/^[1-9]$/.test(element.key)) 
-                return enter(Number(element.key));
+        if (/^[1-9]$/.test(event.key)) 
+                return enter(Number(event.key));
 
-        if (element.key === '0' || element.key === 'Backspace' || element.key === 'Delete') 
+        if (event.key === '0' || event.key === 'Backspace' || event.key === 'Delete') 
                 return enter(0);
 }
 
