@@ -176,7 +176,7 @@ function onBoardClick(event) {
 }
 
 function onPadClick(event) {
-        const button = element.target.closest('[data-n]');
+        const button = element.target.closest('[data-digit]');
 
         if (!button) 
                 return;
