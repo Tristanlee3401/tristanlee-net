@@ -1,54 +1,65 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @custom-variant dark (&:where(.dark, .dark *));
+
 @theme
 {
-	--font-mono: monospace;
-}
+        --font-mono: monospace;
+        --animate-blink: blink 4 step-end infinite;
 
-@layer components {
-    .caret {
-        display: inline-block;
-        width: 15px;
-        height: 30px;
-        background-color: currentColor;
-        animation: blink 1s infinite;
-    }
-
-    @keyframes blink { 
-        50% { opacity: 0; } 
-    }
-
-    .home-thumb-full {
-        max-width: 100%;
-        height: auto;
-        border: 2px solid transparent;
-        transition: border-color 0.2s ease;
-    }
-
-    .home-thumb-full:hover {
-        border-color: currentColor;
-    }
-
-    main {
-        padding-top: calc(var(--nav-height, 0px) + 2.5rem);
-    }
-
-    hr {
-        border: 0;
-        border-top: 1px solid currentColor;
-        margin: 1.5rem 0;
-        opacity: 1;
-    }
+        @keyframes blink {
+                50% {
+                        opacity: 0;
+                }
+        }
 }
 
 @layer base {
-        :root { --sudoku-foreground: #000000; --sudoku-background: #FFFFFF }
-        html.dark { --sudoku-foreground: #FFFFFF; --sudoku-background: #000000 }
+        :root { 
+                --sudoku-foreground: #000000; 
+                --sudoku-background: #FFFFFF 
+        }
+
+        html.dark { 
+                --sudoku-foreground: #FFFFFF; 
+                --sudoku-background: #000000 
+        }
+
+        main {
+                padding-top: calc(var(--nav-height, 0px) + 2.5rem);
+        }
+
+        hr {
+                border: 0;
+                border-top: 1px solid currentColor;
+                margin: 1.5rem 0;
+                opacity: 1;
+        }
 }
 
 @layer components {
+        .caret {
+                display: inline-block;
+                width: 1ch;
+                height: 1lh;
+                background-color: currentColor;
+                animation: var(--animate-blink);
+        }
+
+        .home-thumb-full {
+                max-width: 100%;
+                height: auto;
+                border: 2px solid transparent;
+                transition: border-color 0.2s ease;
+        }
+
+        .home-thumb-full:hover {
+                border-color: currentColor;
+        }
+
         .sudoku-board {
+                --grid-line-soft: color-mix(in srgb, var(--sudoku-foreground) 35%, transparent);
+                --peer-tint: color-mix(in srgb, var(--sudoku-foreground) 8%, transparent);
                 display: grid;
                 grid-template-columns: repeat(9, 1fr);
                 grid-template-rows: repeat(9, 1fr);
@@ -59,23 +70,17 @@
                 user-select: none;
                 -webkit-user-select: none;
         }
+
         .sudoku-cell {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 min-width: 0;
                 min-height: 0;
-                padding: 0;
-                margin: 0;
-                font: inherit;
                 font-size: clamp(1.1rem, 6vw, 1.6rem);
                 line-height: 1;
-                color: inherit;
-                background: transparent;
-                border: 0;
-                border-radius: 0;
-                border-right: 1px solid color-mix(in srgb, var(--sudoku-foreground) 35%, transparent);
-                border-bottom: 1px solid color-mix(in srgb, var(--sudoku-foreground) 35%, transparent);
+                border-right: 1px solid var(--grid-line-soft);
+                border-bottom: 1px solid var(--grid-line-soft);
                 cursor: pointer;
                 touch-action: manipulation;
                 -webkit-tap-highlight-color: transparent;
@@ -90,13 +95,11 @@
         }
 
         .sudoku-cell:nth-child(9n + 3),
-
         .sudoku-cell:nth-child(9n + 6) {
                 border-right: 2px solid var(--sudoku-foreground);
         }
 
         .sudoku-cell:nth-child(n + 19):nth-child(-n + 27),
-
         .sudoku-cell:nth-child(n + 46):nth-child(-n + 54) {
                 border-bottom: 2px solid var(--sudoku-foreground);
         }
@@ -106,18 +109,19 @@
         }
 
         .sudoku-peer {
-                background: color-mix(in srgb, var(--sudoku-foreground) 8%, transparent);
+                background: var(--peer-tint);
         }
 
-        .sudoku-selection {
-                background: var(--sudoku-foreground);
-                color: var(--sudoku-background);
-        }
-        
         .sudoku-wrong {
                 text-decoration: underline;
                 text-decoration-thickness: 2px;
                 text-underline-offset: 0.2em;
+        }
+
+        .sudoku-selection,
+        .sudoku-button:active {
+                background: var(--sudoku-foreground);
+                color: var(--sudoku-background);
         }
 
         .sudoku-pad {
@@ -129,20 +133,11 @@
 
         .sudoku-button {
                 height: 3rem;
-                font: inherit;
                 font-size: 1.125rem;
-                color: inherit;
-                background: transparent;
                 border: 1px solid var(--sudoku-foreground);
-                border-radius: 0;
                 cursor: pointer;
                 touch-action: manipulation;
                 -webkit-tap-highlight-color: transparent;
-        }
-
-        .sudoku-button:active {
-                background: var(--sudoku-foreground);
-                color: var(--sudoku-background);
         }
 
         @media (hover: hover) {
