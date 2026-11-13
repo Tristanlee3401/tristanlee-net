@@ -90,7 +90,7 @@ function checkMessage() {
         if (wrong > 1)
                 return wrong + ' cells are wrong';
 
-        return 'no mistakes so far'
+        return 'no mistakes so far';
 }
 
 function select(cellIndex) {
