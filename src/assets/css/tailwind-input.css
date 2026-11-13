@@ -5,7 +5,7 @@
 @theme
 {
         --font-mono: monospace;
-        --animate-blink: blink 4 step-end infinite;
+        --animate-blink: blink 1s step-end infinite;
 
         @keyframes blink {
                 50% {
@@ -17,12 +17,12 @@
 @layer base {
         :root { 
                 --sudoku-foreground: #000000; 
-                --sudoku-background: #FFFFFF 
+                --sudoku-background: #FFFFFF;
         }
 
         html.dark { 
                 --sudoku-foreground: #FFFFFF; 
-                --sudoku-background: #000000 
+                --sudoku-background: #000000; 
         }
 
         main {
