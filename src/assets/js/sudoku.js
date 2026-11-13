@@ -34,7 +34,7 @@ async function fetchPuzzle() {
         const given = grid.value.flat();
         const solution = grid.solution.flat();
 
-        if (given.length != 81 || solution.length !== 81) 
+        if (given.length !== 81 || solution.length !== 81) 
                 throw new Error('bad puzzle');
 
         return { given, solution, difficulty: String(grid.difficulty || '').toLowerCase() };
